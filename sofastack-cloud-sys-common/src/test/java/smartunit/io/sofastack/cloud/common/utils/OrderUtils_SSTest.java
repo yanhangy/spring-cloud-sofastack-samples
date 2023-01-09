@@ -19,92 +19,97 @@ import org.smartunit.runtime.SmartRunnerParameters;
 import org.smartunit.runtime.TransactionTemplateAnswer;
 import org.smartunit.runtime.ViolatedAssumptionAnswer;
 
-@RunWith(SmartRunner.class) @SmartRunnerParameters(mockJVMNonDeterminism = true, useVFS = true, useVNET = true, resetStaticState = true) 
+@RunWith(SmartRunner.class)
+@SmartRunnerParameters(mockJVMNonDeterminism = true, useVFS = true, useVNET = true, resetStaticState = true)
 public class OrderUtils_SSTest extends OrderUtils_SSTest_scaffolding {
-// allCoveredLines:[14, 17, 21, 25, 26, 30, 31, 32, 34, 35]
+    // allCoveredLines:[14, 17, 21, 25, 26, 30, 31, 32, 34, 35]
 
-  @Test(timeout = 4000)
-  public void test_getRandom_0()  throws Throwable  {
-      //caseID:04d48bf61c0458d032b3c0fb41b1b8f3
-      //CoveredLines: [14, 30, 34, 35]
-      //Input_0_io.sofastack.cloud.common.model.TransferRequest: {}
-      //Assert: assertEquals("002", method_result);
-      
-      OrderUtils orderUtils0 = new OrderUtils();
-      //mock transferRequest0
-      TransferRequest transferRequest0 = mock(TransferRequest.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      
-      //Call method: getRandom
-      Object object0 = PrivateAccess.callMethod((Class<OrderUtils>) OrderUtils.class, orderUtils0, "getRandom", (Object) transferRequest0, (Class<?>) TransferRequest.class);
-      
-      //Test Result Assert
-      assertEquals("002", object0);
-  }
+    @Test(timeout = 4000)
+    public void test_getRandom_0() throws Throwable {
+        //caseID:04d48bf61c0458d032b3c0fb41b1b8f3
+        //CoveredLines: [14, 30, 34, 35]
+        //Input_0_io.sofastack.cloud.common.model.TransferRequest: {}
+        //Assert: assertEquals("002", method_result);
 
-  @Test(timeout = 4000)
-  public void test_getSerialNo_1()  throws Throwable  {
-      //caseID:630a719cbfc7671239084b40dcbff64f
-      //CoveredLines: [17, 25, 26, 30, 31, 32]
-      //Input_0_TransferRequest: null
-      //Assert: assertEquals("20140214082121320000", method_result);
-      
-      
-      //Call method: getSerialNo
-      String string0 = OrderUtils.getSerialNo((TransferRequest) null);
-      
-      //Test Result Assert
-      assertEquals("20140214082121320000", string0);
-  }
+        OrderUtils orderUtils0 = new OrderUtils();
+        //mock transferRequest0
+        TransferRequest transferRequest0 = mock(TransferRequest.class, withSettings()
+            .defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
 
-  @Test(timeout = 4000)
-  public void test_getSerialNo_2()  throws Throwable  {
-      //caseID:06a2f654c546b9b21fed98c18d541ab7
-      //CoveredLines: [17, 25, 26, 30, 34, 35]
-      //Input_0_TransferRequest: {getUserId=1140}
-      //Assert: assertEquals("20140214082121320041", method_result);
-      
-      //mock transferRequest0
-      TransferRequest transferRequest0 = mock(TransferRequest.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(1140).when(transferRequest0).getUserId();
-      
-      //Call method: getSerialNo
-      String string0 = OrderUtils.getSerialNo(transferRequest0);
-      
-      //Test Result Assert
-      assertEquals("20140214082121320041", string0);
-  }
+        //Call method: getRandom
+        Object object0 = PrivateAccess.callMethod((Class<OrderUtils>) OrderUtils.class,
+            orderUtils0, "getRandom", (Object) transferRequest0, (Class<?>) TransferRequest.class);
 
-  @Test(timeout = 4000)
-  public void test_getSerialNo_3()  throws Throwable  {
-      //caseID:04e9500c3da9635cc52528814844f46f
-      //CoveredLines: [17, 25, 26, 30, 34, 35]
-      //Input_0_TransferRequest: {}
-      //Assert: assertEquals("20140214082121320001", method_result);
-      
-      //mock transferRequest0
-      TransferRequest transferRequest0 = mock(TransferRequest.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      
-      //Call method: getSerialNo
-      String string0 = OrderUtils.getSerialNo(transferRequest0);
-      
-      //Test Result Assert
-      assertEquals("20140214082121320001", string0);
-  }
+        //Test Result Assert
+        assertEquals("002", object0);
+    }
 
-  @Test(timeout = 4000)
-  public void test_getTradingNo_4()  throws Throwable  {
-      //caseID:94b41567438fd2a9932ab35adaae747a
-      //CoveredLines: [21, 25, 26, 30, 34, 35]
-      //Input_0_TransferRequest: {}
-      //Assert: assertEquals("20140214082121320001", method_result);
-      
-      //mock transferRequest0
-      TransferRequest transferRequest0 = mock(TransferRequest.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      
-      //Call method: getTradingNo
-      String string0 = OrderUtils.getTradingNo(transferRequest0);
-      
-      //Test Result Assert
-      assertEquals("20140214082121320001", string0);
-  }
+    @Test(timeout = 4000)
+    public void test_getSerialNo_1() throws Throwable {
+        //caseID:630a719cbfc7671239084b40dcbff64f
+        //CoveredLines: [17, 25, 26, 30, 31, 32]
+        //Input_0_TransferRequest: null
+        //Assert: assertEquals("20140214082121320000", method_result);
+
+        //Call method: getSerialNo
+        String string0 = OrderUtils.getSerialNo((TransferRequest) null);
+
+        //Test Result Assert
+        assertEquals("20140214082121320000", string0);
+    }
+
+    @Test(timeout = 4000)
+    public void test_getSerialNo_2() throws Throwable {
+        //caseID:06a2f654c546b9b21fed98c18d541ab7
+        //CoveredLines: [17, 25, 26, 30, 34, 35]
+        //Input_0_TransferRequest: {getUserId=1140}
+        //Assert: assertEquals("20140214082121320041", method_result);
+
+        //mock transferRequest0
+        TransferRequest transferRequest0 = mock(TransferRequest.class, withSettings()
+            .defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        doReturn(1140).when(transferRequest0).getUserId();
+
+        //Call method: getSerialNo
+        String string0 = OrderUtils.getSerialNo(transferRequest0);
+
+        //Test Result Assert
+        assertEquals("20140214082121320041", string0);
+    }
+
+    @Test(timeout = 4000)
+    public void test_getSerialNo_3() throws Throwable {
+        //caseID:04e9500c3da9635cc52528814844f46f
+        //CoveredLines: [17, 25, 26, 30, 34, 35]
+        //Input_0_TransferRequest: {}
+        //Assert: assertEquals("20140214082121320001", method_result);
+
+        //mock transferRequest0
+        TransferRequest transferRequest0 = mock(TransferRequest.class, withSettings()
+            .defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+
+        //Call method: getSerialNo
+        String string0 = OrderUtils.getSerialNo(transferRequest0);
+
+        //Test Result Assert
+        assertEquals("20140214082121320001", string0);
+    }
+
+    @Test(timeout = 4000)
+    public void test_getTradingNo_4() throws Throwable {
+        //caseID:94b41567438fd2a9932ab35adaae747a
+        //CoveredLines: [21, 25, 26, 30, 34, 35]
+        //Input_0_TransferRequest: {}
+        //Assert: assertEquals("20140214082121320001", method_result);
+
+        //mock transferRequest0
+        TransferRequest transferRequest0 = mock(TransferRequest.class, withSettings()
+            .defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+
+        //Call method: getTradingNo
+        String string0 = OrderUtils.getTradingNo(transferRequest0);
+
+        //Test Result Assert
+        assertEquals("20140214082121320001", string0);
+    }
 }

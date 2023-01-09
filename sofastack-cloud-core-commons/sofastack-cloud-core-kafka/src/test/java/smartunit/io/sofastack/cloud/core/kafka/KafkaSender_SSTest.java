@@ -20,27 +20,32 @@ import org.smartunit.runtime.ViolatedAssumptionAnswer;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.core.ProducerFactory;
 
-@RunWith(SmartRunner.class) @SmartRunnerParameters(mockJVMNonDeterminism = true, useVFS = true, useVNET = true, resetStaticState = true) 
+@RunWith(SmartRunner.class)
+@SmartRunnerParameters(mockJVMNonDeterminism = true, useVFS = true, useVNET = true, resetStaticState = true)
 public class KafkaSender_SSTest extends KafkaSender_SSTest_scaffolding {
-// allCoveredLines:[17, 18, 19, 25, 27, 28]
+    // allCoveredLines:[17, 18, 19, 25, 27, 28]
 
-  @Test(timeout = 4000)
-  public void test_sendChannelMessage_0()  throws Throwable  {
-      //caseID:cbf2f95c2cdbdbdb00eaf5c99c724487
-      //CoveredLines: [17, 18, 19, 25, 27, 28]
-      //Input_0_String: 
-      //Input_1_String: io.sofastack.cloud.core.kafka.KafkaSender
-      
-      //mock producer0
-      Producer<String, String> producer0 = (Producer<String, String>) mock(Producer.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      //mock producerFactory0
-      ProducerFactory<String, String> producerFactory0 = (ProducerFactory<String, String>) mock(ProducerFactory.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(producer0).when(producerFactory0).createProducer();
-      doReturn(false).when(producerFactory0).transactionCapable();
-      KafkaTemplate<String, String> kafkaTemplate0 = new KafkaTemplate<String, String>(producerFactory0);
-      KafkaSender kafkaSender0 = new KafkaSender(kafkaTemplate0);
-      
-      //Call method: sendChannelMessage
-      kafkaSender0.sendChannelMessage("", "io.sofastack.cloud.core.kafka.KafkaSender");
-  }
+    @Test(timeout = 4000)
+    public void test_sendChannelMessage_0() throws Throwable {
+        //caseID:cbf2f95c2cdbdbdb00eaf5c99c724487
+        //CoveredLines: [17, 18, 19, 25, 27, 28]
+        //Input_0_String: 
+        //Input_1_String: io.sofastack.cloud.core.kafka.KafkaSender
+
+        //mock producer0
+        Producer<String, String> producer0 = (Producer<String, String>) mock(Producer.class,
+            withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        //mock producerFactory0
+        ProducerFactory<String, String> producerFactory0 = (ProducerFactory<String, String>) mock(
+            ProducerFactory.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer())
+                .stubOnly());
+        doReturn(producer0).when(producerFactory0).createProducer();
+        doReturn(false).when(producerFactory0).transactionCapable();
+        KafkaTemplate<String, String> kafkaTemplate0 = new KafkaTemplate<String, String>(
+            producerFactory0);
+        KafkaSender kafkaSender0 = new KafkaSender(kafkaTemplate0);
+
+        //Call method: sendChannelMessage
+        kafkaSender0.sendChannelMessage("", "io.sofastack.cloud.core.kafka.KafkaSender");
+    }
 }
