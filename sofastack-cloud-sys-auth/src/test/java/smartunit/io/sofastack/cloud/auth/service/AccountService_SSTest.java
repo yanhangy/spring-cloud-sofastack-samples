@@ -21,29 +21,33 @@ import org.smartunit.runtime.SmartRunnerParameters;
 import org.smartunit.runtime.TransactionTemplateAnswer;
 import org.smartunit.runtime.ViolatedAssumptionAnswer;
 
-@RunWith(SmartRunner.class) @SmartRunnerParameters(mockJVMNonDeterminism = true, useVFS = true, useVNET = true, resetStaticState = true) 
+@RunWith(SmartRunner.class)
+@SmartRunnerParameters(mockJVMNonDeterminism = true, useVFS = true, useVNET = true, resetStaticState = true)
 public class AccountService_SSTest extends AccountService_SSTest_scaffolding {
-// allCoveredLines:[18, 30]
+    // allCoveredLines:[18, 30]
 
-  @Test(timeout = 4000)
-  public void test_createAccount_0()  throws Throwable  {
-      //caseID:f724220027b4a0fd349db6ae9aacb38c
-      //CoveredLines: [18, 30]
-      //Input_0_Map<String, Object>: {}
-      //Assert: assertNull(method_result);
-      
-      AccountService accountService0 = new AccountService();
-      //mock accountingService0
-      AccountingService accountingService0 = mock(AccountingService.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      
-      PrivateAccess.setVariable((Class<?>) AccountService.class, accountService0, "accountingService", (Object) accountingService0);
-      //mock map0
-      Map<String, Object> map0 = (Map<String, Object>) mock(Map.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      
-      //Call method: createAccount
-      Result<Boolean> result0 = accountService0.createAccount(map0);
-      
-      //Test Result Assert
-      assertNull(result0);
-  }
+    @Test(timeout = 4000)
+    public void test_createAccount_0() throws Throwable {
+        //caseID:f724220027b4a0fd349db6ae9aacb38c
+        //CoveredLines: [18, 30]
+        //Input_0_Map<String, Object>: {}
+        //Assert: assertNull(method_result);
+
+        AccountService accountService0 = new AccountService();
+        //mock accountingService0
+        AccountingService accountingService0 = mock(AccountingService.class, withSettings()
+            .defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+
+        PrivateAccess.setVariable((Class<?>) AccountService.class, accountService0,
+            "accountingService", (Object) accountingService0);
+        //mock map0
+        Map<String, Object> map0 = (Map<String, Object>) mock(Map.class, withSettings()
+            .defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+
+        //Call method: createAccount
+        Result<Boolean> result0 = accountService0.createAccount(map0);
+
+        //Test Result Assert
+        assertNull(result0);
+    }
 }

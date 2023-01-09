@@ -12,15 +12,16 @@ import org.junit.runner.RunWith;
 import org.smartunit.runtime.SmartRunner;
 import org.smartunit.runtime.SmartRunnerParameters;
 
-@RunWith(SmartRunner.class) @SmartRunnerParameters(mockJVMNonDeterminism = true, useVFS = true, useVNET = true, resetStaticState = true) 
+@RunWith(SmartRunner.class)
+@SmartRunnerParameters(mockJVMNonDeterminism = true, useVFS = true, useVNET = true, resetStaticState = true)
 public class UserApplication_SSTest extends UserApplication_SSTest_scaffolding {
-// allCoveredLines:[15]
+    // allCoveredLines:[15]
 
-  @Test(timeout = 4000)
-  public void test_setCurrentTimeMillis_0()  throws Throwable  {
-      //caseID:c0a617056b31ddd5627f468accb21d5f
-      //CoveredLines: [15]
-      
-      UserApplication userApplication0 = new UserApplication();
-  }
+    @Test(timeout = 4000)
+    public void test_setCurrentTimeMillis_0() throws Throwable {
+        //caseID:c0a617056b31ddd5627f468accb21d5f
+        //CoveredLines: [15]
+
+        UserApplication userApplication0 = new UserApplication();
+    }
 }

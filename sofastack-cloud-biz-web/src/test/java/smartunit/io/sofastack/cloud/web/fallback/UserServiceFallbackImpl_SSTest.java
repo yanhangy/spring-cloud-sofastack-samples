@@ -19,49 +19,51 @@ import org.smartunit.runtime.SmartRunnerParameters;
 import org.smartunit.runtime.TransactionTemplateAnswer;
 import org.smartunit.runtime.ViolatedAssumptionAnswer;
 
-@RunWith(SmartRunner.class) @SmartRunnerParameters(mockJVMNonDeterminism = true, useVFS = true, useVNET = true, resetStaticState = true) 
+@RunWith(SmartRunner.class)
+@SmartRunnerParameters(mockJVMNonDeterminism = true, useVFS = true, useVNET = true, resetStaticState = true)
 public class UserServiceFallbackImpl_SSTest extends UserServiceFallbackImpl_SSTest_scaffolding {
-// allCoveredLines:[13, 17, 18, 19, 20, 21, 26, 27, 28, 29, 30]
+    // allCoveredLines:[13, 17, 18, 19, 20, 21, 26, 27, 28, 29, 30]
 
-  @Test(timeout = 4000)
-  public void test_queryUserDetail_0()  throws Throwable  {
-      //caseID:9f42b836237ac2d37238efcdacc2ebf8
-      //CoveredLines: [13, 17, 18, 19, 20, 21]
-      //Input_0_int: 1
-      //Assert: assertFalse(method_result.isSuccess());
-      //Assert: assertEquals("Query User Details Error, Please Try Later!", method_result.getErrorMsg());
-      
-      UserServiceFallbackImpl userServiceFallbackImpl0 = new UserServiceFallbackImpl();
-      
-      //Call method: queryUserDetail
-      Result<UserDetails> result0 = userServiceFallbackImpl0.queryUserDetail(1);
-      
-      //Test Result Assert
-      assertFalse(result0.isSuccess());
-      
-      //Test Result Assert
-      assertEquals("Query User Details Error, Please Try Later!", result0.getErrorMsg());
-  }
+    @Test(timeout = 4000)
+    public void test_queryUserDetail_0() throws Throwable {
+        //caseID:9f42b836237ac2d37238efcdacc2ebf8
+        //CoveredLines: [13, 17, 18, 19, 20, 21]
+        //Input_0_int: 1
+        //Assert: assertFalse(method_result.isSuccess());
+        //Assert: assertEquals("Query User Details Error, Please Try Later!", method_result.getErrorMsg());
 
-  @Test(timeout = 4000)
-  public void test_register_1()  throws Throwable  {
-      //caseID:b10930dc4b308b69c627f72a3020abff
-      //CoveredLines: [13, 26, 27, 28, 29, 30]
-      //Input_0_UserDetails: {}
-      //Assert: assertFalse(method_result.isSuccess());
-      //Assert: assertEquals("Register User Error, Please Try Later!", method_result.getErrorMsg());
-      
-      UserServiceFallbackImpl userServiceFallbackImpl0 = new UserServiceFallbackImpl();
-      //mock userDetails0
-      UserDetails userDetails0 = mock(UserDetails.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      
-      //Call method: register
-      Result<UserDetails> result0 = userServiceFallbackImpl0.register(userDetails0);
-      
-      //Test Result Assert
-      assertFalse(result0.isSuccess());
-      
-      //Test Result Assert
-      assertEquals("Register User Error, Please Try Later!", result0.getErrorMsg());
-  }
+        UserServiceFallbackImpl userServiceFallbackImpl0 = new UserServiceFallbackImpl();
+
+        //Call method: queryUserDetail
+        Result<UserDetails> result0 = userServiceFallbackImpl0.queryUserDetail(1);
+
+        //Test Result Assert
+        assertFalse(result0.isSuccess());
+
+        //Test Result Assert
+        assertEquals("Query User Details Error, Please Try Later!", result0.getErrorMsg());
+    }
+
+    @Test(timeout = 4000)
+    public void test_register_1() throws Throwable {
+        //caseID:b10930dc4b308b69c627f72a3020abff
+        //CoveredLines: [13, 26, 27, 28, 29, 30]
+        //Input_0_UserDetails: {}
+        //Assert: assertFalse(method_result.isSuccess());
+        //Assert: assertEquals("Register User Error, Please Try Later!", method_result.getErrorMsg());
+
+        UserServiceFallbackImpl userServiceFallbackImpl0 = new UserServiceFallbackImpl();
+        //mock userDetails0
+        UserDetails userDetails0 = mock(UserDetails.class,
+            withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+
+        //Call method: register
+        Result<UserDetails> result0 = userServiceFallbackImpl0.register(userDetails0);
+
+        //Test Result Assert
+        assertFalse(result0.isSuccess());
+
+        //Test Result Assert
+        assertEquals("Register User Error, Please Try Later!", result0.getErrorMsg());
+    }
 }

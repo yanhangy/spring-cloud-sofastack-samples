@@ -13,26 +13,27 @@ import org.junit.runner.RunWith;
 import org.smartunit.runtime.SmartRunner;
 import org.smartunit.runtime.SmartRunnerParameters;
 
-@RunWith(SmartRunner.class) @SmartRunnerParameters(mockJVMNonDeterminism = true, useVFS = true, useVNET = true, resetStaticState = true) 
+@RunWith(SmartRunner.class)
+@SmartRunnerParameters(mockJVMNonDeterminism = true, useVFS = true, useVNET = true, resetStaticState = true)
 public class StaticResApplication_SSTest extends StaticResApplication_SSTest_scaffolding {
-// allCoveredLines:[11, 13]
+    // allCoveredLines:[11, 13]
 
-  @Test(timeout = 4000)
-  public void test_main_0()  throws Throwable  {
-      //caseID:6b9f950480d190c4e85c417567b22d7f
-      //CoveredLines: [11, 13]
-      //Input_0_String[]: stringArray0
-      
-      StaticResApplication staticResApplication0 = new StaticResApplication();
-      String[] stringArray0 = new String[0];
-      
-      //Call method: main
-      // Undeclared exception!
-      try { 
-        StaticResApplication.main(stringArray0);
-      } catch(Throwable e) {
-         verifyException("org.springframework.boot.autoconfigure.condition.OnClassCondition", e);
-         assertEquals("java.lang.NullPointerException", e.getClass().getName());
-      }
-  }
+    @Test(timeout = 4000)
+    public void test_main_0() throws Throwable {
+        //caseID:6b9f950480d190c4e85c417567b22d7f
+        //CoveredLines: [11, 13]
+        //Input_0_String[]: stringArray0
+
+        StaticResApplication staticResApplication0 = new StaticResApplication();
+        String[] stringArray0 = new String[0];
+
+        //Call method: main
+        // Undeclared exception!
+        try {
+            StaticResApplication.main(stringArray0);
+        } catch (Throwable e) {
+            verifyException("org.springframework.boot.autoconfigure.condition.OnClassCondition", e);
+            assertEquals("java.lang.NullPointerException", e.getClass().getName());
+        }
+    }
 }

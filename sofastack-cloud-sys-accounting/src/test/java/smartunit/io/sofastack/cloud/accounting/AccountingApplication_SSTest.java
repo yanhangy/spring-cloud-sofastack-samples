@@ -13,26 +13,27 @@ import org.junit.runner.RunWith;
 import org.smartunit.runtime.SmartRunner;
 import org.smartunit.runtime.SmartRunnerParameters;
 
-@RunWith(SmartRunner.class) @SmartRunnerParameters(mockJVMNonDeterminism = true, useVFS = true, useVNET = true, resetStaticState = true) 
+@RunWith(SmartRunner.class)
+@SmartRunnerParameters(mockJVMNonDeterminism = true, useVFS = true, useVNET = true, resetStaticState = true)
 public class AccountingApplication_SSTest extends AccountingApplication_SSTest_scaffolding {
-// allCoveredLines:[11, 13]
+    // allCoveredLines:[11, 13]
 
-  @Test(timeout = 4000)
-  public void test_main_0()  throws Throwable  {
-      //caseID:36a5304af347332b75bca2e8e0c3a8df
-      //CoveredLines: [11, 13]
-      //Input_0_String[]: stringArray0
-      
-      AccountingApplication accountingApplication0 = new AccountingApplication();
-      String[] stringArray0 = new String[0];
-      
-      //Call method: main
-      // Undeclared exception!
-      try { 
-        AccountingApplication.main(stringArray0);
-      } catch(Throwable e) {
-         verifyException("org.springframework.boot.autoconfigure.condition.OnClassCondition", e);
-         assertEquals("java.lang.NullPointerException", e.getClass().getName());
-      }
-  }
+    @Test(timeout = 4000)
+    public void test_main_0() throws Throwable {
+        //caseID:36a5304af347332b75bca2e8e0c3a8df
+        //CoveredLines: [11, 13]
+        //Input_0_String[]: stringArray0
+
+        AccountingApplication accountingApplication0 = new AccountingApplication();
+        String[] stringArray0 = new String[0];
+
+        //Call method: main
+        // Undeclared exception!
+        try {
+            AccountingApplication.main(stringArray0);
+        } catch (Throwable e) {
+            verifyException("org.springframework.boot.autoconfigure.condition.OnClassCondition", e);
+            assertEquals("java.lang.NullPointerException", e.getClass().getName());
+        }
+    }
 }

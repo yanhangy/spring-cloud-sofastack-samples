@@ -13,37 +13,39 @@ import org.smartunit.runtime.SmartRunner;
 import org.smartunit.runtime.SmartRunnerParameters;
 import org.springframework.cloud.gateway.filter.ratelimit.KeyResolver;
 
-@RunWith(SmartRunner.class) @SmartRunnerParameters(mockJVMNonDeterminism = true, useVFS = true, useVNET = true, resetStaticState = true) 
-public class DefaultLimitStrategyConfiguration_SSTest extends DefaultLimitStrategyConfiguration_SSTest_scaffolding {
-// allCoveredLines:[15, 23, 33]
+@RunWith(SmartRunner.class)
+@SmartRunnerParameters(mockJVMNonDeterminism = true, useVFS = true, useVNET = true, resetStaticState = true)
+public class DefaultLimitStrategyConfiguration_SSTest extends
+                                                     DefaultLimitStrategyConfiguration_SSTest_scaffolding {
+    // allCoveredLines:[15, 23, 33]
 
-  @Test(timeout = 4000)
-  public void test_apiKeyResolver_0()  throws Throwable  {
-      //caseID:5c6e797b2dbef2fc4971d3c8798656f3
-      //CoveredLines: [15, 33, 33]
-      //Assert: assertNotNull(method_result);
-      
-      DefaultLimitStrategyConfiguration defaultLimitStrategyConfiguration0 = new DefaultLimitStrategyConfiguration();
-      
-      //Call method: apiKeyResolver
-      KeyResolver keyResolver0 = defaultLimitStrategyConfiguration0.apiKeyResolver();
-      
-      //Test Result Assert
-      assertNotNull(keyResolver0);
-  }
+    @Test(timeout = 4000)
+    public void test_apiKeyResolver_0() throws Throwable {
+        //caseID:5c6e797b2dbef2fc4971d3c8798656f3
+        //CoveredLines: [15, 33, 33]
+        //Assert: assertNotNull(method_result);
 
-  @Test(timeout = 4000)
-  public void test_ipKeyResolver_1()  throws Throwable  {
-      //caseID:742137906bb77f0aa6431c1fa8ca6d70
-      //CoveredLines: [15, 23, 23]
-      //Assert: assertNotNull(method_result);
-      
-      DefaultLimitStrategyConfiguration defaultLimitStrategyConfiguration0 = new DefaultLimitStrategyConfiguration();
-      
-      //Call method: ipKeyResolver
-      KeyResolver keyResolver0 = defaultLimitStrategyConfiguration0.ipKeyResolver();
-      
-      //Test Result Assert
-      assertNotNull(keyResolver0);
-  }
+        DefaultLimitStrategyConfiguration defaultLimitStrategyConfiguration0 = new DefaultLimitStrategyConfiguration();
+
+        //Call method: apiKeyResolver
+        KeyResolver keyResolver0 = defaultLimitStrategyConfiguration0.apiKeyResolver();
+
+        //Test Result Assert
+        assertNotNull(keyResolver0);
+    }
+
+    @Test(timeout = 4000)
+    public void test_ipKeyResolver_1() throws Throwable {
+        //caseID:742137906bb77f0aa6431c1fa8ca6d70
+        //CoveredLines: [15, 23, 23]
+        //Assert: assertNotNull(method_result);
+
+        DefaultLimitStrategyConfiguration defaultLimitStrategyConfiguration0 = new DefaultLimitStrategyConfiguration();
+
+        //Call method: ipKeyResolver
+        KeyResolver keyResolver0 = defaultLimitStrategyConfiguration0.ipKeyResolver();
+
+        //Test Result Assert
+        assertNotNull(keyResolver0);
+    }
 }

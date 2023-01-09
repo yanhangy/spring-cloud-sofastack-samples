@@ -22,49 +22,56 @@ import org.smartunit.runtime.SmartRunnerParameters;
 import org.smartunit.runtime.TransactionTemplateAnswer;
 import org.smartunit.runtime.ViolatedAssumptionAnswer;
 
-@RunWith(SmartRunner.class) @SmartRunnerParameters(mockJVMNonDeterminism = true, useVFS = true, useVNET = true, resetStaticState = true) 
+@RunWith(SmartRunner.class)
+@SmartRunnerParameters(mockJVMNonDeterminism = true, useVFS = true, useVNET = true, resetStaticState = true)
 public class TradeService_SSTest extends TradeService_SSTest_scaffolding {
-// allCoveredLines:[18, 30, 40]
+    // allCoveredLines:[18, 30, 40]
 
-  @Test(timeout = 4000)
-  public void test_createTradingOrder_0()  throws Throwable  {
-      //caseID:5adfa4087aeae816a0f3d85223cdbafb
-      //CoveredLines: [18, 30]
-      //Input_0_TradingContext: {}
-      //Assert: assertNull(method_result);
-      
-      TradeService tradeService0 = new TradeService();
-      //mock tradingService0
-      TradingService tradingService0 = mock(TradingService.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      
-      PrivateAccess.setVariable((Class<?>) TradeService.class, tradeService0, "tradingService", (Object) tradingService0);
-      //mock tradingContext0
-      TradingContext tradingContext0 = mock(TradingContext.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      
-      //Call method: createTradingOrder
-      Result<TradingOrder> result0 = tradeService0.createTradingOrder(tradingContext0);
-      
-      //Test Result Assert
-      assertNull(result0);
-  }
+    @Test(timeout = 4000)
+    public void test_createTradingOrder_0() throws Throwable {
+        //caseID:5adfa4087aeae816a0f3d85223cdbafb
+        //CoveredLines: [18, 30]
+        //Input_0_TradingContext: {}
+        //Assert: assertNull(method_result);
 
-  @Test(timeout = 4000)
-  public void test_queryTradingOrder_1()  throws Throwable  {
-      //caseID:20ff2e40488a4d253fffa677a0cb556d
-      //CoveredLines: [18, 40]
-      //Input_0_String: io.sofastack.cloud.web.service.TradeService
-      //Assert: assertNull(method_result);
-      
-      TradeService tradeService0 = new TradeService();
-      //mock tradingService0
-      TradingService tradingService0 = mock(TradingService.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      
-      PrivateAccess.setVariable((Class<?>) TradeService.class, tradeService0, "tradingService", (Object) tradingService0);
-      
-      //Call method: queryTradingOrder
-      Result<TradingOrder> result0 = tradeService0.queryTradingOrder("io.sofastack.cloud.web.service.TradeService");
-      
-      //Test Result Assert
-      assertNull(result0);
-  }
+        TradeService tradeService0 = new TradeService();
+        //mock tradingService0
+        TradingService tradingService0 = mock(TradingService.class,
+            withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+
+        PrivateAccess.setVariable((Class<?>) TradeService.class, tradeService0, "tradingService",
+            (Object) tradingService0);
+        //mock tradingContext0
+        TradingContext tradingContext0 = mock(TradingContext.class,
+            withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+
+        //Call method: createTradingOrder
+        Result<TradingOrder> result0 = tradeService0.createTradingOrder(tradingContext0);
+
+        //Test Result Assert
+        assertNull(result0);
+    }
+
+    @Test(timeout = 4000)
+    public void test_queryTradingOrder_1() throws Throwable {
+        //caseID:20ff2e40488a4d253fffa677a0cb556d
+        //CoveredLines: [18, 40]
+        //Input_0_String: io.sofastack.cloud.web.service.TradeService
+        //Assert: assertNull(method_result);
+
+        TradeService tradeService0 = new TradeService();
+        //mock tradingService0
+        TradingService tradingService0 = mock(TradingService.class,
+            withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+
+        PrivateAccess.setVariable((Class<?>) TradeService.class, tradeService0, "tradingService",
+            (Object) tradingService0);
+
+        //Call method: queryTradingOrder
+        Result<TradingOrder> result0 = tradeService0
+            .queryTradingOrder("io.sofastack.cloud.web.service.TradeService");
+
+        //Test Result Assert
+        assertNull(result0);
+    }
 }

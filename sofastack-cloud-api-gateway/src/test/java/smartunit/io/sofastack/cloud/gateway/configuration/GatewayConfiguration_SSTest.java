@@ -24,64 +24,79 @@ import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.http.codec.ServerCodecConfigurer;
 import org.springframework.web.reactive.result.view.ViewResolver;
 
-@RunWith(SmartRunner.class) @SmartRunnerParameters(mockJVMNonDeterminism = true, useVFS = true, useVNET = true, resetStaticState = true) 
+@RunWith(SmartRunner.class)
+@SmartRunnerParameters(mockJVMNonDeterminism = true, useVFS = true, useVNET = true, resetStaticState = true)
 public class GatewayConfiguration_SSTest extends GatewayConfiguration_SSTest_scaffolding {
-// allCoveredLines:[32, 33, 34, 35, 44, 54, 59, 60, 66, 67, 69, 71, 72, 73]
+    // allCoveredLines:[32, 33, 34, 35, 44, 54, 59, 60, 66, 67, 69, 71, 72, 73]
 
-  @Test(timeout = 4000)
-  public void test_doInit_0()  throws Throwable  {
-      //caseID:f0cf0e715b0ae2932cada19f2fcf2f54
-      //CoveredLines: [32, 33, 34, 35, 59, 60, 66, 67, 69, 71, 72, 73]
-      
-      //mock objectProvider0
-      ObjectProvider<List<ViewResolver>> objectProvider0 = (ObjectProvider<List<ViewResolver>>) mock(ObjectProvider.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      //mock serverCodecConfigurer0
-      ServerCodecConfigurer serverCodecConfigurer0 = mock(ServerCodecConfigurer.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      GatewayConfiguration gatewayConfiguration0 = new GatewayConfiguration(objectProvider0, serverCodecConfigurer0);
-      
-      //Call method: doInit
-      // Undeclared exception!
-      try { 
-        gatewayConfiguration0.doInit();
-      } catch(Throwable e) {
-      }
-  }
+    @Test(timeout = 4000)
+    public void test_doInit_0() throws Throwable {
+        //caseID:f0cf0e715b0ae2932cada19f2fcf2f54
+        //CoveredLines: [32, 33, 34, 35, 59, 60, 66, 67, 69, 71, 72, 73]
 
-  @Test(timeout = 4000)
-  public void test_sentinelGatewayBlockExceptionHandler_1()  throws Throwable  {
-      //caseID:23cd367d9c5df8952bb714b8ffd764fc
-      //CoveredLines: [32, 33, 34, 35, 44]
-      //Assert: assertNotNull(method_result);
-      
-      //mock objectProvider0
-      ObjectProvider<List<ViewResolver>> objectProvider0 = (ObjectProvider<List<ViewResolver>>) mock(ObjectProvider.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      //mock serverCodecConfigurer0
-      ServerCodecConfigurer serverCodecConfigurer0 = mock(ServerCodecConfigurer.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      GatewayConfiguration gatewayConfiguration0 = new GatewayConfiguration(objectProvider0, serverCodecConfigurer0);
-      
-      //Call method: sentinelGatewayBlockExceptionHandler
-      SentinelGatewayBlockExceptionHandler sentinelGatewayBlockExceptionHandler0 = gatewayConfiguration0.sentinelGatewayBlockExceptionHandler();
-      
-      //Test Result Assert
-      assertNotNull(sentinelGatewayBlockExceptionHandler0);
-  }
+        //mock objectProvider0
+        ObjectProvider<List<ViewResolver>> objectProvider0 = (ObjectProvider<List<ViewResolver>>) mock(
+            ObjectProvider.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer())
+                .stubOnly());
+        //mock serverCodecConfigurer0
+        ServerCodecConfigurer serverCodecConfigurer0 = mock(ServerCodecConfigurer.class,
+            withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        GatewayConfiguration gatewayConfiguration0 = new GatewayConfiguration(objectProvider0,
+            serverCodecConfigurer0);
 
-  @Test(timeout = 4000)
-  public void test_sentinelGatewayFilter_2()  throws Throwable  {
-      //caseID:b90aae9d43c65f70fc505b17c3e330bb
-      //CoveredLines: [32, 33, 34, 35, 54]
-      //Assert: assertEquals("", method_result.shortcutFieldPrefix());
-      
-      //mock objectProvider0
-      ObjectProvider<List<ViewResolver>> objectProvider0 = (ObjectProvider<List<ViewResolver>>) mock(ObjectProvider.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      //mock serverCodecConfigurer0
-      ServerCodecConfigurer serverCodecConfigurer0 = mock(ServerCodecConfigurer.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      GatewayConfiguration gatewayConfiguration0 = new GatewayConfiguration(objectProvider0, serverCodecConfigurer0);
-      
-      //Call method: sentinelGatewayFilter
-      SentinelGatewayFilter sentinelGatewayFilter0 = (SentinelGatewayFilter)gatewayConfiguration0.sentinelGatewayFilter();
-      
-      //Test Result Assert
-      assertEquals("", sentinelGatewayFilter0.shortcutFieldPrefix());
-  }
+        //Call method: doInit
+        // Undeclared exception!
+        try {
+            gatewayConfiguration0.doInit();
+        } catch (Throwable e) {
+        }
+    }
+
+    @Test(timeout = 4000)
+    public void test_sentinelGatewayBlockExceptionHandler_1() throws Throwable {
+        //caseID:23cd367d9c5df8952bb714b8ffd764fc
+        //CoveredLines: [32, 33, 34, 35, 44]
+        //Assert: assertNotNull(method_result);
+
+        //mock objectProvider0
+        ObjectProvider<List<ViewResolver>> objectProvider0 = (ObjectProvider<List<ViewResolver>>) mock(
+            ObjectProvider.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer())
+                .stubOnly());
+        //mock serverCodecConfigurer0
+        ServerCodecConfigurer serverCodecConfigurer0 = mock(ServerCodecConfigurer.class,
+            withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        GatewayConfiguration gatewayConfiguration0 = new GatewayConfiguration(objectProvider0,
+            serverCodecConfigurer0);
+
+        //Call method: sentinelGatewayBlockExceptionHandler
+        SentinelGatewayBlockExceptionHandler sentinelGatewayBlockExceptionHandler0 = gatewayConfiguration0
+            .sentinelGatewayBlockExceptionHandler();
+
+        //Test Result Assert
+        assertNotNull(sentinelGatewayBlockExceptionHandler0);
+    }
+
+    @Test(timeout = 4000)
+    public void test_sentinelGatewayFilter_2() throws Throwable {
+        //caseID:b90aae9d43c65f70fc505b17c3e330bb
+        //CoveredLines: [32, 33, 34, 35, 54]
+        //Assert: assertEquals("", method_result.shortcutFieldPrefix());
+
+        //mock objectProvider0
+        ObjectProvider<List<ViewResolver>> objectProvider0 = (ObjectProvider<List<ViewResolver>>) mock(
+            ObjectProvider.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer())
+                .stubOnly());
+        //mock serverCodecConfigurer0
+        ServerCodecConfigurer serverCodecConfigurer0 = mock(ServerCodecConfigurer.class,
+            withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        GatewayConfiguration gatewayConfiguration0 = new GatewayConfiguration(objectProvider0,
+            serverCodecConfigurer0);
+
+        //Call method: sentinelGatewayFilter
+        SentinelGatewayFilter sentinelGatewayFilter0 = (SentinelGatewayFilter) gatewayConfiguration0
+            .sentinelGatewayFilter();
+
+        //Test Result Assert
+        assertEquals("", sentinelGatewayFilter0.shortcutFieldPrefix());
+    }
 }

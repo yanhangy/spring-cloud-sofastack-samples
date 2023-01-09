@@ -24,105 +24,117 @@ import org.smartunit.runtime.SmartRunnerParameters;
 import org.smartunit.runtime.TransactionTemplateAnswer;
 import org.smartunit.runtime.ViolatedAssumptionAnswer;
 
-@RunWith(SmartRunner.class) @SmartRunnerParameters(mockJVMNonDeterminism = true, useVFS = true, useVNET = true, resetStaticState = true) 
+@RunWith(SmartRunner.class)
+@SmartRunnerParameters(mockJVMNonDeterminism = true, useVFS = true, useVNET = true, resetStaticState = true)
 public class TradingServiceImpl_SSTest extends TradingServiceImpl_SSTest_scaffolding {
-// allCoveredLines:[22, 30, 32, 33, 34, 35, 36, 38, 39, 41, 42, 43, 44, 45, 46, 51, 53, 54, 55, 60, 61, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77]
+    // allCoveredLines:[22, 30, 32, 33, 34, 35, 36, 38, 39, 41, 42, 43, 44, 45, 46, 51, 53, 54, 55, 60, 61, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77]
 
-  @Test(timeout = 4000)
-  public void test_createTradingOrder_0()  throws Throwable  {
-      //caseID:282cc0b60e7c75aaecd48ce038d2cc7b
-      //CoveredLines: [22, 30, 32, 41, 42, 43, 44, 46, 65, 66, 67]
-      //Input_0_TradingContext: null
-      //Assert: assertFalse(method_result.isSuccess());
-      
-      TradingServiceImpl tradingServiceImpl0 = new TradingServiceImpl();
-      
-      //Call method: createTradingOrder
-      Result<TradingOrder> result0 = tradingServiceImpl0.createTradingOrder((TradingContext) null);
-      
-      //Test Result Assert
-      assertFalse(result0.isSuccess());
-  }
+    @Test(timeout = 4000)
+    public void test_createTradingOrder_0() throws Throwable {
+        //caseID:282cc0b60e7c75aaecd48ce038d2cc7b
+        //CoveredLines: [22, 30, 32, 41, 42, 43, 44, 46, 65, 66, 67]
+        //Input_0_TradingContext: null
+        //Assert: assertFalse(method_result.isSuccess());
 
-  @Test(timeout = 4000)
-  public void test_createTradingOrder_1()  throws Throwable  {
-      //caseID:75dd90dcf52ef8f28a4d594e254c2666
-      //CoveredLines: [22, 30, 32, 33, 34, 35, 36, 45, 46, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77]
-      //Input_0_TradingContext: {getTargetAccount=1, getCreateTime=date0, getPayChannel=\"128\", getOrderGroup=\"128\", getOrderState=\"128\", getOrderType=\"128\", getOrderMark=\"128\", getSourceAccount=1, getOrderAmount=BigDecimal.TEN, getSerialNo=\"128\"}
-      //Assert: assertTrue(method_result.isSuccess());
-      
-      TradingServiceImpl tradingServiceImpl0 = new TradingServiceImpl();
-      //mock tradingOrderDao0
-      TradingOrderDao tradingOrderDao0 = mock(TradingOrderDao.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(1).when(tradingOrderDao0).save(any(io.sofastack.cloud.common.model.TradingOrder.class));
-      
-      PrivateAccess.setVariable((Class<?>) TradingServiceImpl.class, tradingServiceImpl0, "tradingOrderDao", (Object) tradingOrderDao0);
-      BigDecimal bigDecimal0 = BigDecimal.TEN;
-      //mock date0
-      Date date0 = mock(Date.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      //mock tradingContext0
-      TradingContext tradingContext0 = mock(TradingContext.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(date0).when(tradingContext0).getCreateTime();
-      doReturn(bigDecimal0).when(tradingContext0).getOrderAmount();
-      doReturn("128").when(tradingContext0).getOrderGroup();
-      doReturn("128").when(tradingContext0).getOrderMark();
-      doReturn("128").when(tradingContext0).getOrderState();
-      doReturn("128").when(tradingContext0).getOrderType();
-      doReturn("128").when(tradingContext0).getPayChannel();
-      doReturn("128").when(tradingContext0).getSerialNo();
-      doReturn(1).when(tradingContext0).getSourceAccount();
-      doReturn(1).when(tradingContext0).getTargetAccount();
-      
-      //Call method: createTradingOrder
-      Result<TradingOrder> result0 = tradingServiceImpl0.createTradingOrder(tradingContext0);
-      
-      //Test Result Assert
-      assertTrue(result0.isSuccess());
-  }
+        TradingServiceImpl tradingServiceImpl0 = new TradingServiceImpl();
 
-  @Test(timeout = 4000)
-  public void test_createTradingOrder_2()  throws Throwable  {
-      //caseID:c71568b733280334e2a641f65d27494c
-      //CoveredLines: [22, 30, 32, 33, 34, 38, 39, 45, 46, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77]
-      //Input_0_TradingContext: {}
-      //Assert: assertFalse(method_result.isSuccess());
-      //Assert: assertEquals("Failed to insert order to db.", method_result.getErrorMsg());
-      
-      TradingServiceImpl tradingServiceImpl0 = new TradingServiceImpl();
-      //mock tradingOrderDao0
-      TradingOrderDao tradingOrderDao0 = mock(TradingOrderDao.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      
-      PrivateAccess.setVariable((Class<?>) TradingServiceImpl.class, tradingServiceImpl0, "tradingOrderDao", (Object) tradingOrderDao0);
-      //mock tradingContext0
-      TradingContext tradingContext0 = mock(TradingContext.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      
-      //Call method: createTradingOrder
-      Result<TradingOrder> result0 = tradingServiceImpl0.createTradingOrder(tradingContext0);
-      
-      //Test Result Assert
-      assertFalse(result0.isSuccess());
-      
-      //Test Result Assert
-      assertEquals("Failed to insert order to db.", result0.getErrorMsg());
-  }
+        //Call method: createTradingOrder
+        Result<TradingOrder> result0 = tradingServiceImpl0
+            .createTradingOrder((TradingContext) null);
 
-  @Test(timeout = 4000)
-  public void test_queryTradingOrder_3()  throws Throwable  {
-      //caseID:0a9ec7a72bd7ea938e03d5ae6e5d0e24
-      //CoveredLines: [22, 51, 53, 54, 55, 60, 61]
-      //Input_0_String: 257
-      //Assert: assertTrue(method_result.isSuccess());
-      
-      TradingServiceImpl tradingServiceImpl0 = new TradingServiceImpl();
-      //mock tradingOrderDao0
-      TradingOrderDao tradingOrderDao0 = mock(TradingOrderDao.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      
-      PrivateAccess.setVariable((Class<?>) TradingServiceImpl.class, tradingServiceImpl0, "tradingOrderDao", (Object) tradingOrderDao0);
-      
-      //Call method: queryTradingOrder
-      Result<TradingOrder> result0 = tradingServiceImpl0.queryTradingOrder("257");
-      
-      //Test Result Assert
-      assertTrue(result0.isSuccess());
-  }
+        //Test Result Assert
+        assertFalse(result0.isSuccess());
+    }
+
+    @Test(timeout = 4000)
+    public void test_createTradingOrder_1() throws Throwable {
+        //caseID:75dd90dcf52ef8f28a4d594e254c2666
+        //CoveredLines: [22, 30, 32, 33, 34, 35, 36, 45, 46, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77]
+        //Input_0_TradingContext: {getTargetAccount=1, getCreateTime=date0, getPayChannel=\"128\", getOrderGroup=\"128\", getOrderState=\"128\", getOrderType=\"128\", getOrderMark=\"128\", getSourceAccount=1, getOrderAmount=BigDecimal.TEN, getSerialNo=\"128\"}
+        //Assert: assertTrue(method_result.isSuccess());
+
+        TradingServiceImpl tradingServiceImpl0 = new TradingServiceImpl();
+        //mock tradingOrderDao0
+        TradingOrderDao tradingOrderDao0 = mock(TradingOrderDao.class, withSettings()
+            .defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        doReturn(1).when(tradingOrderDao0).save(
+            any(io.sofastack.cloud.common.model.TradingOrder.class));
+
+        PrivateAccess.setVariable((Class<?>) TradingServiceImpl.class, tradingServiceImpl0,
+            "tradingOrderDao", (Object) tradingOrderDao0);
+        BigDecimal bigDecimal0 = BigDecimal.TEN;
+        //mock date0
+        Date date0 = mock(Date.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer())
+            .stubOnly());
+        //mock tradingContext0
+        TradingContext tradingContext0 = mock(TradingContext.class,
+            withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        doReturn(date0).when(tradingContext0).getCreateTime();
+        doReturn(bigDecimal0).when(tradingContext0).getOrderAmount();
+        doReturn("128").when(tradingContext0).getOrderGroup();
+        doReturn("128").when(tradingContext0).getOrderMark();
+        doReturn("128").when(tradingContext0).getOrderState();
+        doReturn("128").when(tradingContext0).getOrderType();
+        doReturn("128").when(tradingContext0).getPayChannel();
+        doReturn("128").when(tradingContext0).getSerialNo();
+        doReturn(1).when(tradingContext0).getSourceAccount();
+        doReturn(1).when(tradingContext0).getTargetAccount();
+
+        //Call method: createTradingOrder
+        Result<TradingOrder> result0 = tradingServiceImpl0.createTradingOrder(tradingContext0);
+
+        //Test Result Assert
+        assertTrue(result0.isSuccess());
+    }
+
+    @Test(timeout = 4000)
+    public void test_createTradingOrder_2() throws Throwable {
+        //caseID:c71568b733280334e2a641f65d27494c
+        //CoveredLines: [22, 30, 32, 33, 34, 38, 39, 45, 46, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77]
+        //Input_0_TradingContext: {}
+        //Assert: assertFalse(method_result.isSuccess());
+        //Assert: assertEquals("Failed to insert order to db.", method_result.getErrorMsg());
+
+        TradingServiceImpl tradingServiceImpl0 = new TradingServiceImpl();
+        //mock tradingOrderDao0
+        TradingOrderDao tradingOrderDao0 = mock(TradingOrderDao.class, withSettings()
+            .defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+
+        PrivateAccess.setVariable((Class<?>) TradingServiceImpl.class, tradingServiceImpl0,
+            "tradingOrderDao", (Object) tradingOrderDao0);
+        //mock tradingContext0
+        TradingContext tradingContext0 = mock(TradingContext.class,
+            withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+
+        //Call method: createTradingOrder
+        Result<TradingOrder> result0 = tradingServiceImpl0.createTradingOrder(tradingContext0);
+
+        //Test Result Assert
+        assertFalse(result0.isSuccess());
+
+        //Test Result Assert
+        assertEquals("Failed to insert order to db.", result0.getErrorMsg());
+    }
+
+    @Test(timeout = 4000)
+    public void test_queryTradingOrder_3() throws Throwable {
+        //caseID:0a9ec7a72bd7ea938e03d5ae6e5d0e24
+        //CoveredLines: [22, 51, 53, 54, 55, 60, 61]
+        //Input_0_String: 257
+        //Assert: assertTrue(method_result.isSuccess());
+
+        TradingServiceImpl tradingServiceImpl0 = new TradingServiceImpl();
+        //mock tradingOrderDao0
+        TradingOrderDao tradingOrderDao0 = mock(TradingOrderDao.class, withSettings()
+            .defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+
+        PrivateAccess.setVariable((Class<?>) TradingServiceImpl.class, tradingServiceImpl0,
+            "tradingOrderDao", (Object) tradingOrderDao0);
+
+        //Call method: queryTradingOrder
+        Result<TradingOrder> result0 = tradingServiceImpl0.queryTradingOrder("257");
+
+        //Test Result Assert
+        assertTrue(result0.isSuccess());
+    }
 }

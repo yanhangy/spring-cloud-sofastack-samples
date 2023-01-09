@@ -12,15 +12,16 @@ import org.junit.runner.RunWith;
 import org.smartunit.runtime.SmartRunner;
 import org.smartunit.runtime.SmartRunnerParameters;
 
-@RunWith(SmartRunner.class) @SmartRunnerParameters(mockJVMNonDeterminism = true, useVFS = true, useVNET = true, resetStaticState = true) 
+@RunWith(SmartRunner.class)
+@SmartRunnerParameters(mockJVMNonDeterminism = true, useVFS = true, useVNET = true, resetStaticState = true)
 public class SOFAAuthApplication_SSTest extends SOFAAuthApplication_SSTest_scaffolding {
-// allCoveredLines:[15]
+    // allCoveredLines:[15]
 
-  @Test(timeout = 4000)
-  public void test_setCurrentTimeMillis_0()  throws Throwable  {
-      //caseID:03d27c62cef0110e575a0d140ff99bd9
-      //CoveredLines: [15]
-      
-      SOFAAuthApplication sOFAAuthApplication0 = new SOFAAuthApplication();
-  }
+    @Test(timeout = 4000)
+    public void test_setCurrentTimeMillis_0() throws Throwable {
+        //caseID:03d27c62cef0110e575a0d140ff99bd9
+        //CoveredLines: [15]
+
+        SOFAAuthApplication sOFAAuthApplication0 = new SOFAAuthApplication();
+    }
 }

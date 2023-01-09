@@ -19,25 +19,28 @@ import org.smartunit.runtime.TransactionTemplateAnswer;
 import org.smartunit.runtime.ViolatedAssumptionAnswer;
 import org.springframework.mail.javamail.JavaMailSender;
 
-@RunWith(SmartRunner.class) @SmartRunnerParameters(mockJVMNonDeterminism = true, useVFS = true, useVNET = true, resetStaticState = true) 
+@RunWith(SmartRunner.class)
+@SmartRunnerParameters(mockJVMNonDeterminism = true, useVFS = true, useVNET = true, resetStaticState = true)
 public class MailServiceImpl_SSTest extends MailServiceImpl_SSTest_scaffolding {
-// allCoveredLines:[17, 19, 37, 38, 39, 40, 41, 43, 46, 47]
+    // allCoveredLines:[17, 19, 37, 38, 39, 40, 41, 43, 46, 47]
 
-  @Test(timeout = 4000)
-  public void test_sendTextMail_0()  throws Throwable  {
-      //caseID:a2b165fbccb5fea407d8655b6f281c5b
-      //CoveredLines: [17, 19, 37, 38, 39, 40, 41, 43, 46, 47]
-      //Input_0_String: hTLRKWvA=)u;K{
-      //Input_1_String: hTLRKWvA=)u;K{
-      //Input_2_String: hTLRKWvA=)u;K{
-      
-      MailServiceImpl mailServiceImpl0 = new MailServiceImpl();
-      //mock javaMailSender0
-      JavaMailSender javaMailSender0 = mock(JavaMailSender.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      
-      PrivateAccess.setVariable((Class<?>) MailServiceImpl.class, mailServiceImpl0, "mailSender", (Object) javaMailSender0);
-      
-      //Call method: sendTextMail
-      mailServiceImpl0.sendTextMail("hTLRKWvA=)u;K{", "hTLRKWvA=)u;K{", "hTLRKWvA=)u;K{");
-  }
+    @Test(timeout = 4000)
+    public void test_sendTextMail_0() throws Throwable {
+        //caseID:a2b165fbccb5fea407d8655b6f281c5b
+        //CoveredLines: [17, 19, 37, 38, 39, 40, 41, 43, 46, 47]
+        //Input_0_String: hTLRKWvA=)u;K{
+        //Input_1_String: hTLRKWvA=)u;K{
+        //Input_2_String: hTLRKWvA=)u;K{
+
+        MailServiceImpl mailServiceImpl0 = new MailServiceImpl();
+        //mock javaMailSender0
+        JavaMailSender javaMailSender0 = mock(JavaMailSender.class,
+            withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+
+        PrivateAccess.setVariable((Class<?>) MailServiceImpl.class, mailServiceImpl0, "mailSender",
+            (Object) javaMailSender0);
+
+        //Call method: sendTextMail
+        mailServiceImpl0.sendTextMail("hTLRKWvA=)u;K{", "hTLRKWvA=)u;K{", "hTLRKWvA=)u;K{");
+    }
 }

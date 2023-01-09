@@ -13,22 +13,23 @@ import org.smartunit.runtime.SmartRunner;
 import org.smartunit.runtime.SmartRunnerParameters;
 import org.springframework.web.server.WebFilter;
 
-@RunWith(SmartRunner.class) @SmartRunnerParameters(mockJVMNonDeterminism = true, useVFS = true, useVNET = true, resetStaticState = true) 
+@RunWith(SmartRunner.class)
+@SmartRunnerParameters(mockJVMNonDeterminism = true, useVFS = true, useVNET = true, resetStaticState = true)
 public class CorsConfig_SSTest extends CorsConfig_SSTest_scaffolding {
-// allCoveredLines:[23, 32]
+    // allCoveredLines:[23, 32]
 
-  @Test(timeout = 4000)
-  public void test_corsFilter_0()  throws Throwable  {
-      //caseID:d23dcaee0e477aaccae733b4e2a69ec2
-      //CoveredLines: [23, 32]
-      //Assert: assertNotNull(method_result);
-      
-      CorsConfig corsConfig0 = new CorsConfig();
-      
-      //Call method: corsFilter
-      WebFilter webFilter0 = corsConfig0.corsFilter();
-      
-      //Test Result Assert
-      assertNotNull(webFilter0);
-  }
+    @Test(timeout = 4000)
+    public void test_corsFilter_0() throws Throwable {
+        //caseID:d23dcaee0e477aaccae733b4e2a69ec2
+        //CoveredLines: [23, 32]
+        //Assert: assertNotNull(method_result);
+
+        CorsConfig corsConfig0 = new CorsConfig();
+
+        //Call method: corsFilter
+        WebFilter webFilter0 = corsConfig0.corsFilter();
+
+        //Test Result Assert
+        assertNotNull(webFilter0);
+    }
 }

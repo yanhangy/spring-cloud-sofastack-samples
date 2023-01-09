@@ -27,305 +27,360 @@ import org.smartunit.runtime.SmartRunnerParameters;
 import org.smartunit.runtime.TransactionTemplateAnswer;
 import org.smartunit.runtime.ViolatedAssumptionAnswer;
 
-@RunWith(SmartRunner.class) @SmartRunnerParameters(mockJVMNonDeterminism = true, useVFS = true, useVNET = true, resetStaticState = true) 
+@RunWith(SmartRunner.class)
+@SmartRunnerParameters(mockJVMNonDeterminism = true, useVFS = true, useVNET = true, resetStaticState = true)
 public class AccountingServiceImpl_SSTest extends AccountingServiceImpl_SSTest_scaffolding {
-// allCoveredLines:[31, 43, 44, 45, 46, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 70, 72, 73, 74, 75, 76, 77, 79, 80, 84, 85, 86, 87, 88, 89, 91, 92, 94, 95, 97, 98, 99, 101, 102, 103, 105, 106, 107, 108, 109, 115, 117, 118, 123, 125, 126, 127, 128, 129, 131, 132, 134, 135, 136, 137, 138, 139, 144, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201]
+    // allCoveredLines:[31, 43, 44, 45, 46, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 70, 72, 73, 74, 75, 76, 77, 79, 80, 84, 85, 86, 87, 88, 89, 91, 92, 94, 95, 97, 98, 99, 101, 102, 103, 105, 106, 107, 108, 109, 115, 117, 118, 123, 125, 126, 127, 128, 129, 131, 132, 134, 135, 136, 137, 138, 139, 144, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201]
 
-  @Test(timeout = 4000)
-  public void test_balanceDetail_0()  throws Throwable  {
-      //caseID:4c3b845f3335b45de7c9b2165d41ac2a
-      //CoveredLines: [31, 43, 44, 45, 46, 48, 49, 59, 60, 61, 62, 64]
-      //Input_0_Map<String, Object>: {get=0}
-      //Assert: assertFalse(method_result.isSuccess());
-      
-      AccountingServiceImpl accountingServiceImpl0 = new AccountingServiceImpl();
-      //mock accountingMapper0
-      AccountingMapper accountingMapper0 = mock(AccountingMapper.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      
-      PrivateAccess.setVariable((Class<?>) AccountingServiceImpl.class, accountingServiceImpl0, "accountingMapper", (Object) accountingMapper0);
-      Integer integer0 = new Integer(0);
-      //mock map0
-      Map<String, Object> map0 = (Map<String, Object>) mock(Map.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(integer0).when(map0).get(any());
-      
-      //Call method: balanceDetail
-      Result<BalanceDetails> result0 = accountingServiceImpl0.balanceDetail(map0);
-      
-      //Test Result Assert
-      assertFalse(result0.isSuccess());
-  }
+    @Test(timeout = 4000)
+    public void test_balanceDetail_0() throws Throwable {
+        //caseID:4c3b845f3335b45de7c9b2165d41ac2a
+        //CoveredLines: [31, 43, 44, 45, 46, 48, 49, 59, 60, 61, 62, 64]
+        //Input_0_Map<String, Object>: {get=0}
+        //Assert: assertFalse(method_result.isSuccess());
 
-  @Test(timeout = 4000)
-  public void test_balanceDetail_1()  throws Throwable  {
-      //caseID:2728e437ecc84b4f21645a34296d2697
-      //CoveredLines: [31, 43, 44, 45, 46, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 63, 64]
-      //Input_0_Map<String, Object>: {get=9999}
-      //Assert: assertTrue(method_result.isSuccess());
-      
-      AccountingServiceImpl accountingServiceImpl0 = new AccountingServiceImpl();
-      //mock accountingEntity0
-      AccountingEntity accountingEntity0 = mock(AccountingEntity.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      //mock accountingMapper0
-      AccountingMapper accountingMapper0 = mock(AccountingMapper.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(accountingEntity0).when(accountingMapper0).queryById(anyInt());
-      
-      PrivateAccess.setVariable((Class<?>) AccountingServiceImpl.class, accountingServiceImpl0, "accountingMapper", (Object) accountingMapper0);
-      Integer integer0 = new Integer(9999);
-      //mock map0
-      Map<String, Object> map0 = (Map<String, Object>) mock(Map.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(integer0).when(map0).get(any());
-      
-      //Call method: balanceDetail
-      Result<BalanceDetails> result0 = accountingServiceImpl0.balanceDetail(map0);
-      
-      //Test Result Assert
-      assertTrue(result0.isSuccess());
-  }
+        AccountingServiceImpl accountingServiceImpl0 = new AccountingServiceImpl();
+        //mock accountingMapper0
+        AccountingMapper accountingMapper0 = mock(AccountingMapper.class, withSettings()
+            .defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
 
-  @Test(timeout = 4000)
-  public void test_checkPayPassword_2()  throws Throwable  {
-      //caseID:e9d9d29e53cbf3f3bc47432c593c3fe1
-      //CoveredLines: [31, 123, 125, 134, 135, 136, 137, 139]
-      //Input_0_Map<String, Object>: {}
-      //Assert: assertFalse(method_result.isSuccess());
-      
-      AccountingServiceImpl accountingServiceImpl0 = new AccountingServiceImpl();
-      //mock map0
-      Map<String, Object> map0 = (Map<String, Object>) mock(Map.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      
-      //Call method: checkPayPassword
-      Result<Boolean> result0 = accountingServiceImpl0.checkPayPassword(map0);
-      
-      //Test Result Assert
-      assertFalse(result0.isSuccess());
-  }
+        PrivateAccess.setVariable((Class<?>) AccountingServiceImpl.class, accountingServiceImpl0,
+            "accountingMapper", (Object) accountingMapper0);
+        Integer integer0 = new Integer(0);
+        //mock map0
+        Map<String, Object> map0 = (Map<String, Object>) mock(Map.class, withSettings()
+            .defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        doReturn(integer0).when(map0).get(any());
 
-  @Test(timeout = 4000)
-  public void test_checkPayPassword_3()  throws Throwable  {
-      //caseID:c86c0f675fcba9eee5178488669c39bd
-      //CoveredLines: [31, 123, 125, 126, 127, 128, 129, 138, 139]
-      //Input_0_Map<String, Object>: {get=1 accountingServiceImpl0}
-      //Assert: assertTrue(method_result.isSuccess());
-      
-      AccountingServiceImpl accountingServiceImpl0 = new AccountingServiceImpl();
-      //mock accountingMapper0
-      AccountingMapper accountingMapper0 = mock(AccountingMapper.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(1).when(accountingMapper0).queryByIdAndPayPassword(anyInt() , anyString());
-      
-      PrivateAccess.setVariable((Class<?>) AccountingServiceImpl.class, accountingServiceImpl0, "accountingMapper", (Object) accountingMapper0);
-      Integer integer0 = new Integer(1);
-      //mock map0
-      Map<String, Object> map0 = (Map<String, Object>) mock(Map.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(integer0, accountingServiceImpl0).when(map0).get(any());
-      
-      //Call method: checkPayPassword
-      Result<Boolean> result0 = accountingServiceImpl0.checkPayPassword(map0);
-      
-      //Test Result Assert
-      assertTrue(result0.isSuccess());
-  }
+        //Call method: balanceDetail
+        Result<BalanceDetails> result0 = accountingServiceImpl0.balanceDetail(map0);
 
-  @Test(timeout = 4000)
-  public void test_checkPayPassword_4()  throws Throwable  {
-      //caseID:d5aad0d946461f3edf86e26802d65e9f
-      //CoveredLines: [31, 123, 125, 126, 127, 131, 132, 138, 139]
-      //Input_0_Map<String, Object>: {get=99}
-      //Assert: assertTrue(method_result.isSuccess());
-      
-      AccountingServiceImpl accountingServiceImpl0 = new AccountingServiceImpl();
-      //mock accountingMapper0
-      AccountingMapper accountingMapper0 = mock(AccountingMapper.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      
-      PrivateAccess.setVariable((Class<?>) AccountingServiceImpl.class, accountingServiceImpl0, "accountingMapper", (Object) accountingMapper0);
-      Integer integer0 = new Integer(99);
-      //mock map0
-      Map<String, Object> map0 = (Map<String, Object>) mock(Map.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(integer0).when(map0).get(any());
-      
-      //Call method: checkPayPassword
-      Result<Boolean> result0 = accountingServiceImpl0.checkPayPassword(map0);
-      
-      //Test Result Assert
-      assertTrue(result0.isSuccess());
-  }
+        //Test Result Assert
+        assertFalse(result0.isSuccess());
+    }
 
-  @Test(timeout = 4000)
-  public void test_createAccount_5()  throws Throwable  {
-      //caseID:dce4414573586e3a7699fec8e5e7fa42
-      //CoveredLines: [31, 144, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 164, 165]
-      //Input_0_Map<String, Object>: {get=serialOrder0 0}
-      //Assert: assertTrue(method_result.isSuccess());
-      
-      AccountingServiceImpl accountingServiceImpl0 = new AccountingServiceImpl();
-      //mock accountingEntity0
-      AccountingEntity accountingEntity0 = mock(AccountingEntity.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      //mock accountingMapper0
-      AccountingMapper accountingMapper0 = mock(AccountingMapper.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(accountingEntity0).when(accountingMapper0).insert(any(io.sofastack.cloud.accounting.entity.AccountingEntity.class));
-      
-      PrivateAccess.setVariable((Class<?>) AccountingServiceImpl.class, accountingServiceImpl0, "accountingMapper", (Object) accountingMapper0);
-      Integer integer0 = new Integer(0);
-      //mock serialOrder0
-      SerialOrder serialOrder0 = mock(SerialOrder.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      //mock map0
-      Map<String, Object> map0 = (Map<String, Object>) mock(Map.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(serialOrder0, integer0).when(map0).get(any());
-      
-      //Call method: createAccount
-      Result<Boolean> result0 = accountingServiceImpl0.createAccount(map0);
-      
-      //Test Result Assert
-      assertTrue(result0.isSuccess());
-  }
+    @Test(timeout = 4000)
+    public void test_balanceDetail_1() throws Throwable {
+        //caseID:2728e437ecc84b4f21645a34296d2697
+        //CoveredLines: [31, 43, 44, 45, 46, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 63, 64]
+        //Input_0_Map<String, Object>: {get=9999}
+        //Assert: assertTrue(method_result.isSuccess());
 
-  @Test(timeout = 4000)
-  public void test_createAccount_6()  throws Throwable  {
-      //caseID:7ec84c47da88d3d9cc3b51f30fc9b664
-      //CoveredLines: [31, 144, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 160, 161, 162, 163, 165]
-      //Input_0_Map<String, Object>: {}
-      //Assert: assertFalse(method_result.isSuccess());
-      
-      AccountingServiceImpl accountingServiceImpl0 = new AccountingServiceImpl();
-      //mock map0
-      Map<String, Object> map0 = (Map<String, Object>) mock(Map.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      
-      //Call method: createAccount
-      Result<Boolean> result0 = accountingServiceImpl0.createAccount(map0);
-      
-      //Test Result Assert
-      assertFalse(result0.isSuccess());
-  }
+        AccountingServiceImpl accountingServiceImpl0 = new AccountingServiceImpl();
+        //mock accountingEntity0
+        AccountingEntity accountingEntity0 = mock(AccountingEntity.class, withSettings()
+            .defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        //mock accountingMapper0
+        AccountingMapper accountingMapper0 = mock(AccountingMapper.class, withSettings()
+            .defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        doReturn(accountingEntity0).when(accountingMapper0).queryById(anyInt());
 
-  @Test(timeout = 4000)
-  public void test_transfer_7()  throws Throwable  {
-      //caseID:657e152602b88d457744891c0ec3eccf
-      //CoveredLines: [31, 70, 72, 73, 74, 75, 79, 80, 84, 85, 86, 87, 88, 89, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183]
-      //Input_0_TransferRequest: {getTargetId=2004, getAmountMoney=BigDecimal.ZERO BigDecimal.ZERO, getUserId=2004 2004 2004}
-      //Assert: assertEquals("\u8D26\u6237\u4F59\u989D\u4E0D\u8DB3", method_result.getErrorMsg());
-      //Assert: assertFalse(method_result.isSuccess());
-      
-      AccountingServiceImpl accountingServiceImpl0 = new AccountingServiceImpl();
-      //mock accountingEntity0
-      AccountingEntity accountingEntity0 = mock(AccountingEntity.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      BigDecimal bigDecimal0 = BigDecimal.ZERO;
-      //mock accountingEntity1
-      AccountingEntity accountingEntity1 = mock(AccountingEntity.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(bigDecimal0).when(accountingEntity1).getAvailableAssets();
-      //mock accountingMapper0
-      AccountingMapper accountingMapper0 = mock(AccountingMapper.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(accountingEntity1, accountingEntity0).when(accountingMapper0).queryById(anyInt());
-      //mock serialOrderMapper0
-      SerialOrderMapper serialOrderMapper0 = mock(SerialOrderMapper.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(2004).when(serialOrderMapper0).save(any(io.sofastack.cloud.common.model.SerialOrder.class));
-      
-      PrivateAccess.setVariable((Class<?>) AccountingServiceImpl.class, accountingServiceImpl0, "serialOrderMapper", (Object) serialOrderMapper0);
-      
-      PrivateAccess.setVariable((Class<?>) AccountingServiceImpl.class, accountingServiceImpl0, "accountingMapper", (Object) accountingMapper0);
-      //mock transferRequest0
-      TransferRequest transferRequest0 = mock(TransferRequest.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(bigDecimal0, bigDecimal0).when(transferRequest0).getAmountMoney();
-      doReturn(2004).when(transferRequest0).getTargetId();
-      doReturn(2004, 2004, 2004).when(transferRequest0).getUserId();
-      
-      //Call method: transfer
-      Result<SerialOrder> result0 = accountingServiceImpl0.transfer(transferRequest0);
-      
-      //Test Result Assert
-      assertEquals("\u8D26\u6237\u4F59\u989D\u4E0D\u8DB3", result0.getErrorMsg());
-      
-      //Test Result Assert
-      assertFalse(result0.isSuccess());
-  }
+        PrivateAccess.setVariable((Class<?>) AccountingServiceImpl.class, accountingServiceImpl0,
+            "accountingMapper", (Object) accountingMapper0);
+        Integer integer0 = new Integer(9999);
+        //mock map0
+        Map<String, Object> map0 = (Map<String, Object>) mock(Map.class, withSettings()
+            .defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        doReturn(integer0).when(map0).get(any());
 
-  @Test(timeout = 4000)
-  public void test_transfer_8()  throws Throwable  {
-      //caseID:305e67aaed97018e468f067dde9a3d16
-      //CoveredLines: [31, 70, 72, 73, 74, 75, 76, 77, 84, 85, 91, 92, 94, 95, 97, 98, 99, 101, 102, 103, 105, 106, 107, 115, 117, 118, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201]
-      //Input_0_TransferRequest: {getTargetId=0 0 0, getRemark=\"org.apache.commons.io.filefilter.WildcardFilter\", getAmountMoney=BigDecimal.ZERO BigDecimal.ZERO BigDecimal.ZERO BigDecimal.ZERO BigDecimal.ONE BigDecimal.ZERO BigDecimal.ZERO BigDecimal.ZERO BigDecimal.ONE, getUserId=0 0 0 0 0 0}
-      //Assert: assertFalse(method_result.isSuccess());
-      
-      AccountingServiceImpl accountingServiceImpl0 = new AccountingServiceImpl();
-      BigDecimal bigDecimal0 = BigDecimal.ONE;
-      //mock accountingEntity0
-      AccountingEntity accountingEntity0 = mock(AccountingEntity.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(bigDecimal0).when(accountingEntity0).getAvailableAssets();
-      doReturn(bigDecimal0).when(accountingEntity0).getTotalAssets();
-      //mock accountingEntity1
-      AccountingEntity accountingEntity1 = mock(AccountingEntity.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(bigDecimal0, bigDecimal0).when(accountingEntity1).getAvailableAssets();
-      doReturn(bigDecimal0).when(accountingEntity1).getFrozenAssets();
-      doReturn(bigDecimal0).when(accountingEntity1).getTotalAssets();
-      //mock accountingMapper0
-      AccountingMapper accountingMapper0 = mock(AccountingMapper.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(0).when(accountingMapper0).deductAssets(anyInt() , any(java.math.BigDecimal.class) , any(java.math.BigDecimal.class));
-      doReturn(0).when(accountingMapper0).frozonAssets(anyInt() , any(java.math.BigDecimal.class) , any(java.math.BigDecimal.class));
-      doReturn(accountingEntity1, accountingEntity0).when(accountingMapper0).queryById(anyInt());
-      doReturn(0).when(accountingMapper0).updateAvailableAssets(anyInt() , any(java.math.BigDecimal.class) , any(java.math.BigDecimal.class));
-      //mock serialOrderMapper0
-      SerialOrderMapper serialOrderMapper0 = mock(SerialOrderMapper.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(0, 0).when(serialOrderMapper0).save(any(io.sofastack.cloud.common.model.SerialOrder.class));
-      
-      PrivateAccess.setVariable((Class<?>) AccountingServiceImpl.class, accountingServiceImpl0, "serialOrderMapper", (Object) serialOrderMapper0);
-      
-      PrivateAccess.setVariable((Class<?>) AccountingServiceImpl.class, accountingServiceImpl0, "accountingMapper", (Object) accountingMapper0);
-      BigDecimal bigDecimal1 = BigDecimal.ZERO;
-      //mock transferRequest0
-      TransferRequest transferRequest0 = mock(TransferRequest.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(bigDecimal1, bigDecimal1, bigDecimal1, bigDecimal1, bigDecimal0, bigDecimal1, bigDecimal1, bigDecimal1, bigDecimal0).when(transferRequest0).getAmountMoney();
-      doReturn("org.apache.commons.io.filefilter.WildcardFilter").when(transferRequest0).getRemark();
-      doReturn(0, 0, 0).when(transferRequest0).getTargetId();
-      doReturn(0, 0, 0, 0, 0, 0).when(transferRequest0).getUserId();
-      
-      //Call method: transfer
-      Result<SerialOrder> result0 = accountingServiceImpl0.transfer(transferRequest0);
-      
-      //Test Result Assert
-      assertFalse(result0.isSuccess());
-  }
+        //Call method: balanceDetail
+        Result<BalanceDetails> result0 = accountingServiceImpl0.balanceDetail(map0);
 
-  @Test(timeout = 4000)
-  public void test_transfer_9()  throws Throwable  {
-      //caseID:c32671be2a554f4fe5ba4486aa6a7c3d
-      //CoveredLines: [31, 70, 72, 73, 74, 75, 76, 77, 84, 85, 91, 92, 94, 95, 97, 98, 99, 101, 102, 103, 105, 106, 107, 108, 109, 115, 117, 118, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201]
-      //Input_0_TransferRequest: {getTargetId=13 13 13, getRemark=\"FORBID\", getAmountMoney=BigDecimal.ZERO BigDecimal.ZERO BigDecimal.ZERO BigDecimal.ZERO BigDecimal.ONE BigDecimal.ZERO BigDecimal.ZERO BigDecimal.ZERO BigDecimal.ONE, getUserId=13 13 13 13 13 13}
-      //Assert: assertTrue(method_result.isSuccess());
-      
-      AccountingServiceImpl accountingServiceImpl0 = new AccountingServiceImpl();
-      BigDecimal bigDecimal0 = BigDecimal.ONE;
-      //mock accountingEntity0
-      AccountingEntity accountingEntity0 = mock(AccountingEntity.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(bigDecimal0).when(accountingEntity0).getAvailableAssets();
-      doReturn(bigDecimal0).when(accountingEntity0).getTotalAssets();
-      //mock accountingEntity1
-      AccountingEntity accountingEntity1 = mock(AccountingEntity.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(bigDecimal0, bigDecimal0).when(accountingEntity1).getAvailableAssets();
-      doReturn(bigDecimal0).when(accountingEntity1).getFrozenAssets();
-      doReturn(bigDecimal0).when(accountingEntity1).getTotalAssets();
-      //mock accountingMapper0
-      AccountingMapper accountingMapper0 = mock(AccountingMapper.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(13).when(accountingMapper0).deductAssets(anyInt() , any(java.math.BigDecimal.class) , any(java.math.BigDecimal.class));
-      doReturn(13).when(accountingMapper0).frozonAssets(anyInt() , any(java.math.BigDecimal.class) , any(java.math.BigDecimal.class));
-      doReturn(accountingEntity1, accountingEntity0).when(accountingMapper0).queryById(anyInt());
-      doReturn(13).when(accountingMapper0).updateAvailableAssets(anyInt() , any(java.math.BigDecimal.class) , any(java.math.BigDecimal.class));
-      //mock serialOrderMapper0
-      SerialOrderMapper serialOrderMapper0 = mock(SerialOrderMapper.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(13, 13).when(serialOrderMapper0).save(any(io.sofastack.cloud.common.model.SerialOrder.class));
-      
-      PrivateAccess.setVariable((Class<?>) AccountingServiceImpl.class, accountingServiceImpl0, "serialOrderMapper", (Object) serialOrderMapper0);
-      
-      PrivateAccess.setVariable((Class<?>) AccountingServiceImpl.class, accountingServiceImpl0, "accountingMapper", (Object) accountingMapper0);
-      BigDecimal bigDecimal1 = BigDecimal.ZERO;
-      //mock transferRequest0
-      TransferRequest transferRequest0 = mock(TransferRequest.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(bigDecimal1, bigDecimal1, bigDecimal1, bigDecimal1, bigDecimal0, bigDecimal1, bigDecimal1, bigDecimal1, bigDecimal0).when(transferRequest0).getAmountMoney();
-      doReturn("FORBID").when(transferRequest0).getRemark();
-      doReturn(13, 13, 13).when(transferRequest0).getTargetId();
-      doReturn(13, 13, 13, 13, 13, 13).when(transferRequest0).getUserId();
-      
-      //Call method: transfer
-      Result<SerialOrder> result0 = accountingServiceImpl0.transfer(transferRequest0);
-      
-      //Test Result Assert
-      assertTrue(result0.isSuccess());
-  }
+        //Test Result Assert
+        assertTrue(result0.isSuccess());
+    }
+
+    @Test(timeout = 4000)
+    public void test_checkPayPassword_2() throws Throwable {
+        //caseID:e9d9d29e53cbf3f3bc47432c593c3fe1
+        //CoveredLines: [31, 123, 125, 134, 135, 136, 137, 139]
+        //Input_0_Map<String, Object>: {}
+        //Assert: assertFalse(method_result.isSuccess());
+
+        AccountingServiceImpl accountingServiceImpl0 = new AccountingServiceImpl();
+        //mock map0
+        Map<String, Object> map0 = (Map<String, Object>) mock(Map.class, withSettings()
+            .defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+
+        //Call method: checkPayPassword
+        Result<Boolean> result0 = accountingServiceImpl0.checkPayPassword(map0);
+
+        //Test Result Assert
+        assertFalse(result0.isSuccess());
+    }
+
+    @Test(timeout = 4000)
+    public void test_checkPayPassword_3() throws Throwable {
+        //caseID:c86c0f675fcba9eee5178488669c39bd
+        //CoveredLines: [31, 123, 125, 126, 127, 128, 129, 138, 139]
+        //Input_0_Map<String, Object>: {get=1 accountingServiceImpl0}
+        //Assert: assertTrue(method_result.isSuccess());
+
+        AccountingServiceImpl accountingServiceImpl0 = new AccountingServiceImpl();
+        //mock accountingMapper0
+        AccountingMapper accountingMapper0 = mock(AccountingMapper.class, withSettings()
+            .defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        doReturn(1).when(accountingMapper0).queryByIdAndPayPassword(anyInt(), anyString());
+
+        PrivateAccess.setVariable((Class<?>) AccountingServiceImpl.class, accountingServiceImpl0,
+            "accountingMapper", (Object) accountingMapper0);
+        Integer integer0 = new Integer(1);
+        //mock map0
+        Map<String, Object> map0 = (Map<String, Object>) mock(Map.class, withSettings()
+            .defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        doReturn(integer0, accountingServiceImpl0).when(map0).get(any());
+
+        //Call method: checkPayPassword
+        Result<Boolean> result0 = accountingServiceImpl0.checkPayPassword(map0);
+
+        //Test Result Assert
+        assertTrue(result0.isSuccess());
+    }
+
+    @Test(timeout = 4000)
+    public void test_checkPayPassword_4() throws Throwable {
+        //caseID:d5aad0d946461f3edf86e26802d65e9f
+        //CoveredLines: [31, 123, 125, 126, 127, 131, 132, 138, 139]
+        //Input_0_Map<String, Object>: {get=99}
+        //Assert: assertTrue(method_result.isSuccess());
+
+        AccountingServiceImpl accountingServiceImpl0 = new AccountingServiceImpl();
+        //mock accountingMapper0
+        AccountingMapper accountingMapper0 = mock(AccountingMapper.class, withSettings()
+            .defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+
+        PrivateAccess.setVariable((Class<?>) AccountingServiceImpl.class, accountingServiceImpl0,
+            "accountingMapper", (Object) accountingMapper0);
+        Integer integer0 = new Integer(99);
+        //mock map0
+        Map<String, Object> map0 = (Map<String, Object>) mock(Map.class, withSettings()
+            .defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        doReturn(integer0).when(map0).get(any());
+
+        //Call method: checkPayPassword
+        Result<Boolean> result0 = accountingServiceImpl0.checkPayPassword(map0);
+
+        //Test Result Assert
+        assertTrue(result0.isSuccess());
+    }
+
+    @Test(timeout = 4000)
+    public void test_createAccount_5() throws Throwable {
+        //caseID:dce4414573586e3a7699fec8e5e7fa42
+        //CoveredLines: [31, 144, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 164, 165]
+        //Input_0_Map<String, Object>: {get=serialOrder0 0}
+        //Assert: assertTrue(method_result.isSuccess());
+
+        AccountingServiceImpl accountingServiceImpl0 = new AccountingServiceImpl();
+        //mock accountingEntity0
+        AccountingEntity accountingEntity0 = mock(AccountingEntity.class, withSettings()
+            .defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        //mock accountingMapper0
+        AccountingMapper accountingMapper0 = mock(AccountingMapper.class, withSettings()
+            .defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        doReturn(accountingEntity0).when(accountingMapper0).insert(
+            any(io.sofastack.cloud.accounting.entity.AccountingEntity.class));
+
+        PrivateAccess.setVariable((Class<?>) AccountingServiceImpl.class, accountingServiceImpl0,
+            "accountingMapper", (Object) accountingMapper0);
+        Integer integer0 = new Integer(0);
+        //mock serialOrder0
+        SerialOrder serialOrder0 = mock(SerialOrder.class,
+            withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        //mock map0
+        Map<String, Object> map0 = (Map<String, Object>) mock(Map.class, withSettings()
+            .defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        doReturn(serialOrder0, integer0).when(map0).get(any());
+
+        //Call method: createAccount
+        Result<Boolean> result0 = accountingServiceImpl0.createAccount(map0);
+
+        //Test Result Assert
+        assertTrue(result0.isSuccess());
+    }
+
+    @Test(timeout = 4000)
+    public void test_createAccount_6() throws Throwable {
+        //caseID:7ec84c47da88d3d9cc3b51f30fc9b664
+        //CoveredLines: [31, 144, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 160, 161, 162, 163, 165]
+        //Input_0_Map<String, Object>: {}
+        //Assert: assertFalse(method_result.isSuccess());
+
+        AccountingServiceImpl accountingServiceImpl0 = new AccountingServiceImpl();
+        //mock map0
+        Map<String, Object> map0 = (Map<String, Object>) mock(Map.class, withSettings()
+            .defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+
+        //Call method: createAccount
+        Result<Boolean> result0 = accountingServiceImpl0.createAccount(map0);
+
+        //Test Result Assert
+        assertFalse(result0.isSuccess());
+    }
+
+    @Test(timeout = 4000)
+    public void test_transfer_7() throws Throwable {
+        //caseID:657e152602b88d457744891c0ec3eccf
+        //CoveredLines: [31, 70, 72, 73, 74, 75, 79, 80, 84, 85, 86, 87, 88, 89, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183]
+        //Input_0_TransferRequest: {getTargetId=2004, getAmountMoney=BigDecimal.ZERO BigDecimal.ZERO, getUserId=2004 2004 2004}
+        //Assert: assertEquals("\u8D26\u6237\u4F59\u989D\u4E0D\u8DB3", method_result.getErrorMsg());
+        //Assert: assertFalse(method_result.isSuccess());
+
+        AccountingServiceImpl accountingServiceImpl0 = new AccountingServiceImpl();
+        //mock accountingEntity0
+        AccountingEntity accountingEntity0 = mock(AccountingEntity.class, withSettings()
+            .defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        BigDecimal bigDecimal0 = BigDecimal.ZERO;
+        //mock accountingEntity1
+        AccountingEntity accountingEntity1 = mock(AccountingEntity.class, withSettings()
+            .defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        doReturn(bigDecimal0).when(accountingEntity1).getAvailableAssets();
+        //mock accountingMapper0
+        AccountingMapper accountingMapper0 = mock(AccountingMapper.class, withSettings()
+            .defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        doReturn(accountingEntity1, accountingEntity0).when(accountingMapper0).queryById(anyInt());
+        //mock serialOrderMapper0
+        SerialOrderMapper serialOrderMapper0 = mock(SerialOrderMapper.class, withSettings()
+            .defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        doReturn(2004).when(serialOrderMapper0).save(
+            any(io.sofastack.cloud.common.model.SerialOrder.class));
+
+        PrivateAccess.setVariable((Class<?>) AccountingServiceImpl.class, accountingServiceImpl0,
+            "serialOrderMapper", (Object) serialOrderMapper0);
+
+        PrivateAccess.setVariable((Class<?>) AccountingServiceImpl.class, accountingServiceImpl0,
+            "accountingMapper", (Object) accountingMapper0);
+        //mock transferRequest0
+        TransferRequest transferRequest0 = mock(TransferRequest.class, withSettings()
+            .defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        doReturn(bigDecimal0, bigDecimal0).when(transferRequest0).getAmountMoney();
+        doReturn(2004).when(transferRequest0).getTargetId();
+        doReturn(2004, 2004, 2004).when(transferRequest0).getUserId();
+
+        //Call method: transfer
+        Result<SerialOrder> result0 = accountingServiceImpl0.transfer(transferRequest0);
+
+        //Test Result Assert
+        assertEquals("\u8D26\u6237\u4F59\u989D\u4E0D\u8DB3", result0.getErrorMsg());
+
+        //Test Result Assert
+        assertFalse(result0.isSuccess());
+    }
+
+    @Test(timeout = 4000)
+    public void test_transfer_8() throws Throwable {
+        //caseID:305e67aaed97018e468f067dde9a3d16
+        //CoveredLines: [31, 70, 72, 73, 74, 75, 76, 77, 84, 85, 91, 92, 94, 95, 97, 98, 99, 101, 102, 103, 105, 106, 107, 115, 117, 118, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201]
+        //Input_0_TransferRequest: {getTargetId=0 0 0, getRemark=\"org.apache.commons.io.filefilter.WildcardFilter\", getAmountMoney=BigDecimal.ZERO BigDecimal.ZERO BigDecimal.ZERO BigDecimal.ZERO BigDecimal.ONE BigDecimal.ZERO BigDecimal.ZERO BigDecimal.ZERO BigDecimal.ONE, getUserId=0 0 0 0 0 0}
+        //Assert: assertFalse(method_result.isSuccess());
+
+        AccountingServiceImpl accountingServiceImpl0 = new AccountingServiceImpl();
+        BigDecimal bigDecimal0 = BigDecimal.ONE;
+        //mock accountingEntity0
+        AccountingEntity accountingEntity0 = mock(AccountingEntity.class, withSettings()
+            .defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        doReturn(bigDecimal0).when(accountingEntity0).getAvailableAssets();
+        doReturn(bigDecimal0).when(accountingEntity0).getTotalAssets();
+        //mock accountingEntity1
+        AccountingEntity accountingEntity1 = mock(AccountingEntity.class, withSettings()
+            .defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        doReturn(bigDecimal0, bigDecimal0).when(accountingEntity1).getAvailableAssets();
+        doReturn(bigDecimal0).when(accountingEntity1).getFrozenAssets();
+        doReturn(bigDecimal0).when(accountingEntity1).getTotalAssets();
+        //mock accountingMapper0
+        AccountingMapper accountingMapper0 = mock(AccountingMapper.class, withSettings()
+            .defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        doReturn(0).when(accountingMapper0).deductAssets(anyInt(), any(java.math.BigDecimal.class),
+            any(java.math.BigDecimal.class));
+        doReturn(0).when(accountingMapper0).frozonAssets(anyInt(), any(java.math.BigDecimal.class),
+            any(java.math.BigDecimal.class));
+        doReturn(accountingEntity1, accountingEntity0).when(accountingMapper0).queryById(anyInt());
+        doReturn(0).when(accountingMapper0).updateAvailableAssets(anyInt(),
+            any(java.math.BigDecimal.class), any(java.math.BigDecimal.class));
+        //mock serialOrderMapper0
+        SerialOrderMapper serialOrderMapper0 = mock(SerialOrderMapper.class, withSettings()
+            .defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        doReturn(0, 0).when(serialOrderMapper0).save(
+            any(io.sofastack.cloud.common.model.SerialOrder.class));
+
+        PrivateAccess.setVariable((Class<?>) AccountingServiceImpl.class, accountingServiceImpl0,
+            "serialOrderMapper", (Object) serialOrderMapper0);
+
+        PrivateAccess.setVariable((Class<?>) AccountingServiceImpl.class, accountingServiceImpl0,
+            "accountingMapper", (Object) accountingMapper0);
+        BigDecimal bigDecimal1 = BigDecimal.ZERO;
+        //mock transferRequest0
+        TransferRequest transferRequest0 = mock(TransferRequest.class, withSettings()
+            .defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        doReturn(bigDecimal1, bigDecimal1, bigDecimal1, bigDecimal1, bigDecimal0, bigDecimal1,
+            bigDecimal1, bigDecimal1, bigDecimal0).when(transferRequest0).getAmountMoney();
+        doReturn("org.apache.commons.io.filefilter.WildcardFilter").when(transferRequest0)
+            .getRemark();
+        doReturn(0, 0, 0).when(transferRequest0).getTargetId();
+        doReturn(0, 0, 0, 0, 0, 0).when(transferRequest0).getUserId();
+
+        //Call method: transfer
+        Result<SerialOrder> result0 = accountingServiceImpl0.transfer(transferRequest0);
+
+        //Test Result Assert
+        assertFalse(result0.isSuccess());
+    }
+
+    @Test(timeout = 4000)
+    public void test_transfer_9() throws Throwable {
+        //caseID:c32671be2a554f4fe5ba4486aa6a7c3d
+        //CoveredLines: [31, 70, 72, 73, 74, 75, 76, 77, 84, 85, 91, 92, 94, 95, 97, 98, 99, 101, 102, 103, 105, 106, 107, 108, 109, 115, 117, 118, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201]
+        //Input_0_TransferRequest: {getTargetId=13 13 13, getRemark=\"FORBID\", getAmountMoney=BigDecimal.ZERO BigDecimal.ZERO BigDecimal.ZERO BigDecimal.ZERO BigDecimal.ONE BigDecimal.ZERO BigDecimal.ZERO BigDecimal.ZERO BigDecimal.ONE, getUserId=13 13 13 13 13 13}
+        //Assert: assertTrue(method_result.isSuccess());
+
+        AccountingServiceImpl accountingServiceImpl0 = new AccountingServiceImpl();
+        BigDecimal bigDecimal0 = BigDecimal.ONE;
+        //mock accountingEntity0
+        AccountingEntity accountingEntity0 = mock(AccountingEntity.class, withSettings()
+            .defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        doReturn(bigDecimal0).when(accountingEntity0).getAvailableAssets();
+        doReturn(bigDecimal0).when(accountingEntity0).getTotalAssets();
+        //mock accountingEntity1
+        AccountingEntity accountingEntity1 = mock(AccountingEntity.class, withSettings()
+            .defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        doReturn(bigDecimal0, bigDecimal0).when(accountingEntity1).getAvailableAssets();
+        doReturn(bigDecimal0).when(accountingEntity1).getFrozenAssets();
+        doReturn(bigDecimal0).when(accountingEntity1).getTotalAssets();
+        //mock accountingMapper0
+        AccountingMapper accountingMapper0 = mock(AccountingMapper.class, withSettings()
+            .defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        doReturn(13).when(accountingMapper0).deductAssets(anyInt(),
+            any(java.math.BigDecimal.class), any(java.math.BigDecimal.class));
+        doReturn(13).when(accountingMapper0).frozonAssets(anyInt(),
+            any(java.math.BigDecimal.class), any(java.math.BigDecimal.class));
+        doReturn(accountingEntity1, accountingEntity0).when(accountingMapper0).queryById(anyInt());
+        doReturn(13).when(accountingMapper0).updateAvailableAssets(anyInt(),
+            any(java.math.BigDecimal.class), any(java.math.BigDecimal.class));
+        //mock serialOrderMapper0
+        SerialOrderMapper serialOrderMapper0 = mock(SerialOrderMapper.class, withSettings()
+            .defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        doReturn(13, 13).when(serialOrderMapper0).save(
+            any(io.sofastack.cloud.common.model.SerialOrder.class));
+
+        PrivateAccess.setVariable((Class<?>) AccountingServiceImpl.class, accountingServiceImpl0,
+            "serialOrderMapper", (Object) serialOrderMapper0);
+
+        PrivateAccess.setVariable((Class<?>) AccountingServiceImpl.class, accountingServiceImpl0,
+            "accountingMapper", (Object) accountingMapper0);
+        BigDecimal bigDecimal1 = BigDecimal.ZERO;
+        //mock transferRequest0
+        TransferRequest transferRequest0 = mock(TransferRequest.class, withSettings()
+            .defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        doReturn(bigDecimal1, bigDecimal1, bigDecimal1, bigDecimal1, bigDecimal0, bigDecimal1,
+            bigDecimal1, bigDecimal1, bigDecimal0).when(transferRequest0).getAmountMoney();
+        doReturn("FORBID").when(transferRequest0).getRemark();
+        doReturn(13, 13, 13).when(transferRequest0).getTargetId();
+        doReturn(13, 13, 13, 13, 13, 13).when(transferRequest0).getUserId();
+
+        //Call method: transfer
+        Result<SerialOrder> result0 = accountingServiceImpl0.transfer(transferRequest0);
+
+        //Test Result Assert
+        assertTrue(result0.isSuccess());
+    }
 }
