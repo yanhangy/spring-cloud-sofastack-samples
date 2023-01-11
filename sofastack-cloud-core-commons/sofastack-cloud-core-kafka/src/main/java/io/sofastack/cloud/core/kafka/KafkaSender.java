@@ -10,7 +10,7 @@ import org.springframework.kafka.core.KafkaTemplate;
  **/
 public class KafkaSender {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(KafkaSender.class);
+    private static final Logger           LOGGER = LoggerFactory.getLogger(KafkaSender.class);
 
     private KafkaTemplate<String, String> kafkaTemplate;
 
@@ -23,7 +23,7 @@ public class KafkaSender {
      */
     public void sendChannelMessage(String channel, String message) {
         LOGGER.info("kafka sender ready to send msg in topic of [" + channel + "], message = "
-                + message);
+                    + message);
         kafkaTemplate.send(channel, message);
     }
 }

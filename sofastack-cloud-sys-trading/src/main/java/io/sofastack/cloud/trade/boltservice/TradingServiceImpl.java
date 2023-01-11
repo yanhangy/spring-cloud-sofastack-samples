@@ -18,7 +18,7 @@ import org.springframework.stereotype.Service;
  * @since:
  **/
 @Service
-@SofaService(bindings = {@SofaServiceBinding(bindingType = "bolt")})
+@SofaService(bindings = { @SofaServiceBinding(bindingType = "bolt") })
 public class TradingServiceImpl implements TradingService {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(TradingServiceImpl.class);
