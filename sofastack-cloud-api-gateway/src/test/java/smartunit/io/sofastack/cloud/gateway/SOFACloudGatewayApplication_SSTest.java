@@ -12,15 +12,17 @@ import org.junit.runner.RunWith;
 import org.smartunit.runtime.SmartRunner;
 import org.smartunit.runtime.SmartRunnerParameters;
 
-@RunWith(SmartRunner.class) @SmartRunnerParameters(mockJVMNonDeterminism = true, useVFS = true, useVNET = true, resetStaticState = true) 
-public class SOFACloudGatewayApplication_SSTest extends SOFACloudGatewayApplication_SSTest_scaffolding {
-// allCoveredLines:[13]
+@RunWith(SmartRunner.class)
+@SmartRunnerParameters(mockJVMNonDeterminism = true, useVFS = true, useVNET = true, resetStaticState = true)
+public class SOFACloudGatewayApplication_SSTest extends
+                                               SOFACloudGatewayApplication_SSTest_scaffolding {
+    // allCoveredLines:[13]
 
-  @Test(timeout = 4000)
-  public void test_setCurrentTimeMillis_0()  throws Throwable  {
-      //caseID:57f8b4389be1b72c6a4a08341ff54bcb
-      //CoveredLines: [13]
-      
-      SOFACloudGatewayApplication sOFACloudGatewayApplication0 = new SOFACloudGatewayApplication();
-  }
+    @Test(timeout = 4000)
+    public void test_setCurrentTimeMillis_0() throws Throwable {
+        //caseID:57f8b4389be1b72c6a4a08341ff54bcb
+        //CoveredLines: [13]
+
+        SOFACloudGatewayApplication sOFACloudGatewayApplication0 = new SOFACloudGatewayApplication();
+    }
 }

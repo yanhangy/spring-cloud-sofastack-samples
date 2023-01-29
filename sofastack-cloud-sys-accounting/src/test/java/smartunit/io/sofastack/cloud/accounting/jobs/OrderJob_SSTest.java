@@ -27,126 +27,155 @@ import org.smartunit.runtime.SmartRunnerParameters;
 import org.smartunit.runtime.TransactionTemplateAnswer;
 import org.smartunit.runtime.ViolatedAssumptionAnswer;
 
-@RunWith(SmartRunner.class) @SmartRunnerParameters(mockJVMNonDeterminism = true, useVFS = true, useVNET = true, resetStaticState = true) 
+@RunWith(SmartRunner.class)
+@SmartRunnerParameters(mockJVMNonDeterminism = true, useVFS = true, useVNET = true, resetStaticState = true)
 public class OrderJob_SSTest extends OrderJob_SSTest_scaffolding {
-// allCoveredLines:[24, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 56, 58, 59, 60]
+    // allCoveredLines:[24, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 56, 58, 59, 60]
 
-  @Test(timeout = 4000)
-  public void test_executeInternal_0()  throws Throwable  {
-      //caseID:535a1807d359278de39a1a0f191b01b4
-      //CoveredLines: [24, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51]
-      //Input_0_org.quartz.JobExecutionContext: {}
-      
-      OrderJob orderJob0 = new OrderJob();
-      LinkedList<Integer> linkedList0 = new LinkedList<Integer>();
-      Integer integer0 = new Integer((-1));
-      
-      linkedList0.add(integer0);
-      //mock accountingMapper0
-      AccountingMapper accountingMapper0 = mock(AccountingMapper.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(linkedList0).when(accountingMapper0).queryAllAccounts();
-      LinkedList<SerialOrder> linkedList1 = new LinkedList<SerialOrder>();
-      BigDecimal bigDecimal0 = new BigDecimal(1);
-      //mock serialOrder0
-      SerialOrder serialOrder0 = mock(SerialOrder.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(bigDecimal0).when(serialOrder0).getMoney();
-      doReturn("\u652F\u51FA").when(serialOrder0).getSerialType();
-      
-      linkedList1.add(serialOrder0);
-      //mock serialOrderMapper0
-      SerialOrderMapper serialOrderMapper0 = mock(SerialOrderMapper.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(linkedList1).when(serialOrderMapper0).querySerialOrdersOneDay(anyInt() , any(java.util.Date.class) , any(java.util.Date.class));
-      
-      PrivateAccess.setVariable((Class<?>) OrderJob.class, orderJob0, "serialOrderMapper", (Object) serialOrderMapper0);
-      
-      PrivateAccess.setVariable((Class<?>) OrderJob.class, orderJob0, "accountingMapper", (Object) accountingMapper0);
-      //mock jobExecutionContext0
-      JobExecutionContext jobExecutionContext0 = mock(JobExecutionContext.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      
-      //Call method: executeInternal
-      try { 
-        PrivateAccess.callMethod((Class<OrderJob>) OrderJob.class, orderJob0, "executeInternal", (Object) jobExecutionContext0, (Class<?>) JobExecutionContext.class);
-      } catch(Throwable e) {
-         verifyException("io.sofastack.cloud.accounting.jobs.OrderJob", e);
-         assertEquals("java.lang.NullPointerException", e.getClass().getName());
-      }
-  }
+    @Test(timeout = 4000)
+    public void test_executeInternal_0() throws Throwable {
+        //caseID:535a1807d359278de39a1a0f191b01b4
+        //CoveredLines: [24, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51]
+        //Input_0_org.quartz.JobExecutionContext: {}
 
-  @Test(timeout = 4000)
-  public void test_executeInternal_1()  throws Throwable  {
-      //caseID:dd24e608089188a2531f4a37a7bac6a1
-      //CoveredLines: [24, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 52, 53, 54]
-      //Input_0_org.quartz.JobExecutionContext: {}
-      
-      OrderJob orderJob0 = new OrderJob();
-      ArrayList<Integer> arrayList0 = new ArrayList<Integer>();
-      Integer integer0 = new Integer(80);
-      
-      arrayList0.add(integer0);
-      //mock accountingMapper0
-      AccountingMapper accountingMapper0 = mock(AccountingMapper.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(arrayList0).when(accountingMapper0).queryAllAccounts();
-      ArrayList<SerialOrder> arrayList1 = new ArrayList<SerialOrder>();
-      BigDecimal bigDecimal0 = new BigDecimal(590);
-      //mock serialOrder0
-      SerialOrder serialOrder0 = mock(SerialOrder.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(bigDecimal0).when(serialOrder0).getMoney();
-      doReturn("1", "\u6536\u5165").when(serialOrder0).getSerialType();
-      
-      arrayList1.add(serialOrder0);
-      //mock serialOrderMapper0
-      SerialOrderMapper serialOrderMapper0 = mock(SerialOrderMapper.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(arrayList1).when(serialOrderMapper0).querySerialOrdersOneDay(anyInt() , any(java.util.Date.class) , any(java.util.Date.class));
-      
-      PrivateAccess.setVariable((Class<?>) OrderJob.class, orderJob0, "serialOrderMapper", (Object) serialOrderMapper0);
-      
-      PrivateAccess.setVariable((Class<?>) OrderJob.class, orderJob0, "accountingMapper", (Object) accountingMapper0);
-      //mock jobExecutionContext0
-      JobExecutionContext jobExecutionContext0 = mock(JobExecutionContext.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      
-      //Call method: executeInternal
-      try { 
-        PrivateAccess.callMethod((Class<OrderJob>) OrderJob.class, orderJob0, "executeInternal", (Object) jobExecutionContext0, (Class<?>) JobExecutionContext.class);
-      } catch(Throwable e) {
-         verifyException("io.sofastack.cloud.accounting.jobs.OrderJob", e);
-         assertEquals("java.lang.NullPointerException", e.getClass().getName());
-      }
-  }
+        OrderJob orderJob0 = new OrderJob();
+        LinkedList<Integer> linkedList0 = new LinkedList<Integer>();
+        Integer integer0 = new Integer((-1));
 
-  @Test(timeout = 4000)
-  public void test_executeInternal_2()  throws Throwable  {
-      //caseID:172196b57be13040f22c455dd93b859a
-      //CoveredLines: [24, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 52, 56, 58, 59, 60]
-      //Input_0_org.quartz.JobExecutionContext: {}
-      
-      OrderJob orderJob0 = new OrderJob();
-      ArrayList<Integer> arrayList0 = new ArrayList<Integer>();
-      Integer integer0 = new Integer(1797);
-      
-      arrayList0.add(integer0);
-      //mock accountingMapper0
-      AccountingMapper accountingMapper0 = mock(AccountingMapper.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(arrayList0).when(accountingMapper0).queryAllAccounts();
-      //mock billMapper0
-      BillMapper billMapper0 = mock(BillMapper.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      ArrayList<SerialOrder> arrayList1 = new ArrayList<SerialOrder>();
-      //mock serialOrder0
-      SerialOrder serialOrder0 = mock(SerialOrder.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      
-      arrayList1.add(serialOrder0);
-      //mock serialOrderMapper0
-      SerialOrderMapper serialOrderMapper0 = mock(SerialOrderMapper.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(arrayList1).when(serialOrderMapper0).querySerialOrdersOneDay(anyInt() , any(java.util.Date.class) , any(java.util.Date.class));
-      
-      PrivateAccess.setVariable((Class<?>) OrderJob.class, orderJob0, "serialOrderMapper", (Object) serialOrderMapper0);
-      
-      PrivateAccess.setVariable((Class<?>) OrderJob.class, orderJob0, "billMapper", (Object) billMapper0);
-      
-      PrivateAccess.setVariable((Class<?>) OrderJob.class, orderJob0, "accountingMapper", (Object) accountingMapper0);
-      //mock jobExecutionContext0
-      JobExecutionContext jobExecutionContext0 = mock(JobExecutionContext.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      
-      //Call method: executeInternal
-      PrivateAccess.callMethod((Class<OrderJob>) OrderJob.class, orderJob0, "executeInternal", (Object) jobExecutionContext0, (Class<?>) JobExecutionContext.class);
-  }
+        linkedList0.add(integer0);
+        //mock accountingMapper0
+        AccountingMapper accountingMapper0 = mock(AccountingMapper.class, withSettings()
+            .defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        doReturn(linkedList0).when(accountingMapper0).queryAllAccounts();
+        LinkedList<SerialOrder> linkedList1 = new LinkedList<SerialOrder>();
+        BigDecimal bigDecimal0 = new BigDecimal(1);
+        //mock serialOrder0
+        SerialOrder serialOrder0 = mock(SerialOrder.class,
+            withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        doReturn(bigDecimal0).when(serialOrder0).getMoney();
+        doReturn("\u652F\u51FA").when(serialOrder0).getSerialType();
+
+        linkedList1.add(serialOrder0);
+        //mock serialOrderMapper0
+        SerialOrderMapper serialOrderMapper0 = mock(SerialOrderMapper.class, withSettings()
+            .defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        doReturn(linkedList1).when(serialOrderMapper0).querySerialOrdersOneDay(anyInt(),
+            any(java.util.Date.class), any(java.util.Date.class));
+
+        PrivateAccess.setVariable((Class<?>) OrderJob.class, orderJob0, "serialOrderMapper",
+            (Object) serialOrderMapper0);
+
+        PrivateAccess.setVariable((Class<?>) OrderJob.class, orderJob0, "accountingMapper",
+            (Object) accountingMapper0);
+        //mock jobExecutionContext0
+        JobExecutionContext jobExecutionContext0 = mock(JobExecutionContext.class, withSettings()
+            .defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+
+        //Call method: executeInternal
+        try {
+            PrivateAccess.callMethod((Class<OrderJob>) OrderJob.class, orderJob0,
+                "executeInternal", (Object) jobExecutionContext0,
+                (Class<?>) JobExecutionContext.class);
+        } catch (Throwable e) {
+            verifyException("io.sofastack.cloud.accounting.jobs.OrderJob", e);
+            assertEquals("java.lang.NullPointerException", e.getClass().getName());
+        }
+    }
+
+    @Test(timeout = 4000)
+    public void test_executeInternal_1() throws Throwable {
+        //caseID:dd24e608089188a2531f4a37a7bac6a1
+        //CoveredLines: [24, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 52, 53, 54]
+        //Input_0_org.quartz.JobExecutionContext: {}
+
+        OrderJob orderJob0 = new OrderJob();
+        ArrayList<Integer> arrayList0 = new ArrayList<Integer>();
+        Integer integer0 = new Integer(80);
+
+        arrayList0.add(integer0);
+        //mock accountingMapper0
+        AccountingMapper accountingMapper0 = mock(AccountingMapper.class, withSettings()
+            .defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        doReturn(arrayList0).when(accountingMapper0).queryAllAccounts();
+        ArrayList<SerialOrder> arrayList1 = new ArrayList<SerialOrder>();
+        BigDecimal bigDecimal0 = new BigDecimal(590);
+        //mock serialOrder0
+        SerialOrder serialOrder0 = mock(SerialOrder.class,
+            withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        doReturn(bigDecimal0).when(serialOrder0).getMoney();
+        doReturn("1", "\u6536\u5165").when(serialOrder0).getSerialType();
+
+        arrayList1.add(serialOrder0);
+        //mock serialOrderMapper0
+        SerialOrderMapper serialOrderMapper0 = mock(SerialOrderMapper.class, withSettings()
+            .defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        doReturn(arrayList1).when(serialOrderMapper0).querySerialOrdersOneDay(anyInt(),
+            any(java.util.Date.class), any(java.util.Date.class));
+
+        PrivateAccess.setVariable((Class<?>) OrderJob.class, orderJob0, "serialOrderMapper",
+            (Object) serialOrderMapper0);
+
+        PrivateAccess.setVariable((Class<?>) OrderJob.class, orderJob0, "accountingMapper",
+            (Object) accountingMapper0);
+        //mock jobExecutionContext0
+        JobExecutionContext jobExecutionContext0 = mock(JobExecutionContext.class, withSettings()
+            .defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+
+        //Call method: executeInternal
+        try {
+            PrivateAccess.callMethod((Class<OrderJob>) OrderJob.class, orderJob0,
+                "executeInternal", (Object) jobExecutionContext0,
+                (Class<?>) JobExecutionContext.class);
+        } catch (Throwable e) {
+            verifyException("io.sofastack.cloud.accounting.jobs.OrderJob", e);
+            assertEquals("java.lang.NullPointerException", e.getClass().getName());
+        }
+    }
+
+    @Test(timeout = 4000)
+    public void test_executeInternal_2() throws Throwable {
+        //caseID:172196b57be13040f22c455dd93b859a
+        //CoveredLines: [24, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 52, 56, 58, 59, 60]
+        //Input_0_org.quartz.JobExecutionContext: {}
+
+        OrderJob orderJob0 = new OrderJob();
+        ArrayList<Integer> arrayList0 = new ArrayList<Integer>();
+        Integer integer0 = new Integer(1797);
+
+        arrayList0.add(integer0);
+        //mock accountingMapper0
+        AccountingMapper accountingMapper0 = mock(AccountingMapper.class, withSettings()
+            .defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        doReturn(arrayList0).when(accountingMapper0).queryAllAccounts();
+        //mock billMapper0
+        BillMapper billMapper0 = mock(BillMapper.class,
+            withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        ArrayList<SerialOrder> arrayList1 = new ArrayList<SerialOrder>();
+        //mock serialOrder0
+        SerialOrder serialOrder0 = mock(SerialOrder.class,
+            withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+
+        arrayList1.add(serialOrder0);
+        //mock serialOrderMapper0
+        SerialOrderMapper serialOrderMapper0 = mock(SerialOrderMapper.class, withSettings()
+            .defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        doReturn(arrayList1).when(serialOrderMapper0).querySerialOrdersOneDay(anyInt(),
+            any(java.util.Date.class), any(java.util.Date.class));
+
+        PrivateAccess.setVariable((Class<?>) OrderJob.class, orderJob0, "serialOrderMapper",
+            (Object) serialOrderMapper0);
+
+        PrivateAccess.setVariable((Class<?>) OrderJob.class, orderJob0, "billMapper",
+            (Object) billMapper0);
+
+        PrivateAccess.setVariable((Class<?>) OrderJob.class, orderJob0, "accountingMapper",
+            (Object) accountingMapper0);
+        //mock jobExecutionContext0
+        JobExecutionContext jobExecutionContext0 = mock(JobExecutionContext.class, withSettings()
+            .defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+
+        //Call method: executeInternal
+        PrivateAccess.callMethod((Class<OrderJob>) OrderJob.class, orderJob0, "executeInternal",
+            (Object) jobExecutionContext0, (Class<?>) JobExecutionContext.class);
+    }
 }

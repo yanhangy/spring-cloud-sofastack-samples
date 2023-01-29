@@ -13,22 +13,25 @@ import org.quartz.impl.triggers.CronTriggerImpl;
 import org.smartunit.runtime.SmartRunner;
 import org.smartunit.runtime.SmartRunnerParameters;
 
-@RunWith(SmartRunner.class) @SmartRunnerParameters(mockJVMNonDeterminism = true, useVFS = true, useVNET = true, resetStaticState = true) 
-public class DailyOrderSchedulerConfiguration_SSTest extends DailyOrderSchedulerConfiguration_SSTest_scaffolding {
-// allCoveredLines:[19, 23, 24, 30, 31, 32]
+@RunWith(SmartRunner.class)
+@SmartRunnerParameters(mockJVMNonDeterminism = true, useVFS = true, useVNET = true, resetStaticState = true)
+public class DailyOrderSchedulerConfiguration_SSTest extends
+                                                    DailyOrderSchedulerConfiguration_SSTest_scaffolding {
+    // allCoveredLines:[19, 23, 24, 30, 31, 32]
 
-  @Test(timeout = 4000)
-  public void test_sampleJobTrigger_0()  throws Throwable  {
-      //caseID:48065e21ec64b9a77c0364fafd42a20d
-      //CoveredLines: [19, 23, 24, 30, 31, 32]
-      //Assert: assertFalse(method_result.hasAdditionalProperties());
-      
-      DailyOrderSchedulerConfiguration dailyOrderSchedulerConfiguration0 = new DailyOrderSchedulerConfiguration();
-      
-      //Call method: sampleJobTrigger
-      CronTriggerImpl cronTriggerImpl0 = (CronTriggerImpl)dailyOrderSchedulerConfiguration0.sampleJobTrigger();
-      
-      //Test Result Assert
-      assertFalse(cronTriggerImpl0.hasAdditionalProperties());
-  }
+    @Test(timeout = 4000)
+    public void test_sampleJobTrigger_0() throws Throwable {
+        //caseID:48065e21ec64b9a77c0364fafd42a20d
+        //CoveredLines: [19, 23, 24, 30, 31, 32]
+        //Assert: assertFalse(method_result.hasAdditionalProperties());
+
+        DailyOrderSchedulerConfiguration dailyOrderSchedulerConfiguration0 = new DailyOrderSchedulerConfiguration();
+
+        //Call method: sampleJobTrigger
+        CronTriggerImpl cronTriggerImpl0 = (CronTriggerImpl) dailyOrderSchedulerConfiguration0
+            .sampleJobTrigger();
+
+        //Test Result Assert
+        assertFalse(cronTriggerImpl0.hasAdditionalProperties());
+    }
 }

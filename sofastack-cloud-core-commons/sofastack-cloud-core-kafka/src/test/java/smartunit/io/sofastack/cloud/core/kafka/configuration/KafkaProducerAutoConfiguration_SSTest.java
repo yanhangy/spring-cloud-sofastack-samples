@@ -20,26 +20,31 @@ import org.smartunit.runtime.ViolatedAssumptionAnswer;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.core.ProducerFactory;
 
-@RunWith(SmartRunner.class) @SmartRunnerParameters(mockJVMNonDeterminism = true, useVFS = true, useVNET = true, resetStaticState = true) 
-public class KafkaProducerAutoConfiguration_SSTest extends KafkaProducerAutoConfiguration_SSTest_scaffolding {
-// allCoveredLines:[13, 17]
+@RunWith(SmartRunner.class)
+@SmartRunnerParameters(mockJVMNonDeterminism = true, useVFS = true, useVNET = true, resetStaticState = true)
+public class KafkaProducerAutoConfiguration_SSTest extends
+                                                  KafkaProducerAutoConfiguration_SSTest_scaffolding {
+    // allCoveredLines:[13, 17]
 
-  @Test(timeout = 4000)
-  public void test_kafkaSender_0()  throws Throwable  {
-      //caseID:cd10ed50c166a3ed0fc4bb26dfe941dd
-      //CoveredLines: [13, 17]
-      //Input_0_KafkaTemplate<String, String>: producerFactory0
-      //Assert: assertNotNull(method_result);
-      
-      KafkaProducerAutoConfiguration kafkaProducerAutoConfiguration0 = new KafkaProducerAutoConfiguration();
-      //mock producerFactory0
-      ProducerFactory<String, String> producerFactory0 = (ProducerFactory<String, String>) mock(ProducerFactory.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      KafkaTemplate<String, String> kafkaTemplate0 = new KafkaTemplate<String, String>(producerFactory0);
-      
-      //Call method: kafkaSender
-      KafkaSender kafkaSender0 = kafkaProducerAutoConfiguration0.kafkaSender(kafkaTemplate0);
-      
-      //Test Result Assert
-      assertNotNull(kafkaSender0);
-  }
+    @Test(timeout = 4000)
+    public void test_kafkaSender_0() throws Throwable {
+        //caseID:cd10ed50c166a3ed0fc4bb26dfe941dd
+        //CoveredLines: [13, 17]
+        //Input_0_KafkaTemplate<String, String>: producerFactory0
+        //Assert: assertNotNull(method_result);
+
+        KafkaProducerAutoConfiguration kafkaProducerAutoConfiguration0 = new KafkaProducerAutoConfiguration();
+        //mock producerFactory0
+        ProducerFactory<String, String> producerFactory0 = (ProducerFactory<String, String>) mock(
+            ProducerFactory.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer())
+                .stubOnly());
+        KafkaTemplate<String, String> kafkaTemplate0 = new KafkaTemplate<String, String>(
+            producerFactory0);
+
+        //Call method: kafkaSender
+        KafkaSender kafkaSender0 = kafkaProducerAutoConfiguration0.kafkaSender(kafkaTemplate0);
+
+        //Test Result Assert
+        assertNotNull(kafkaSender0);
+    }
 }

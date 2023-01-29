@@ -27,287 +27,368 @@ import org.smartunit.runtime.SmartRunnerParameters;
 import org.smartunit.runtime.TransactionTemplateAnswer;
 import org.smartunit.runtime.ViolatedAssumptionAnswer;
 
-@RunWith(SmartRunner.class) @SmartRunnerParameters(mockJVMNonDeterminism = true, useVFS = true, useVNET = true, resetStaticState = true) 
+@RunWith(SmartRunner.class)
+@SmartRunnerParameters(mockJVMNonDeterminism = true, useVFS = true, useVNET = true, resetStaticState = true)
 public class AuthController_SSTest extends AuthController_SSTest_scaffolding {
-// allCoveredLines:[28, 40, 42, 43, 44, 45, 48, 49, 50, 51, 53, 54, 55, 56, 58, 60, 61, 62, 63, 64, 69, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 91, 92, 93, 94, 95, 96]
+    // allCoveredLines:[28, 40, 42, 43, 44, 45, 48, 49, 50, 51, 53, 54, 55, 56, 58, 60, 61, 62, 63, 64, 69, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 91, 92, 93, 94, 95, 96]
 
-  @Test(timeout = 4000)
-  public void test_register_0()  throws Throwable  {
-      //caseID:caedf3ef2af6daac5040239478f4bff5
-      //CoveredLines: [28, 69, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 88, 89, 95, 96]
-      //Input_0_HttpServletRequest: {getSession=httpSession0}
-      //Input_1_RegisterRequest: {getPassword=\"org.apache.commons.io.filefilter.FalseFileFilter\" \"org.apache.commons.io.filefilter.FalseFileFilter\", getEmail=\"org.apache.commons.io.filefilter.FalseFileFilter\", getUserName=\"org.apache.commons.io.filefilter.FalseFileFilter\" \"org.apache.commons.io.filefilter.FalseFileFilter\"}
-      //Assert: assertFalse(method_result.isSuccess());
-      
-      AuthController authController0 = new AuthController();
-      //mock result0
-      Result<UserDetails> result0 = (Result<UserDetails>) mock(Result.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn("org.apache.commons.io.filefilter.FalseFileFilter").when(result0).getErrorMsg();
-      doReturn(false).when(result0).isSuccess();
-      //mock userService0
-      UserService userService0 = mock(UserService.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(result0).when(userService0).register(any(io.sofastack.cloud.common.model.UserDetails.class));
-      
-      PrivateAccess.setVariable((Class<?>) AuthController.class, authController0, "userService", (Object) userService0);
-      //mock httpSession0
-      HttpSession httpSession0 = mock(HttpSession.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      //mock httpServletRequest0
-      HttpServletRequest httpServletRequest0 = mock(HttpServletRequest.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(httpSession0).when(httpServletRequest0).getSession();
-      //mock registerRequest0
-      RegisterRequest registerRequest0 = mock(RegisterRequest.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn("org.apache.commons.io.filefilter.FalseFileFilter").when(registerRequest0).getEmail();
-      doReturn("org.apache.commons.io.filefilter.FalseFileFilter", "org.apache.commons.io.filefilter.FalseFileFilter").when(registerRequest0).getPassword();
-      doReturn("org.apache.commons.io.filefilter.FalseFileFilter", "org.apache.commons.io.filefilter.FalseFileFilter").when(registerRequest0).getUserName();
-      
-      //Call method: register
-      RestFacadeResp<Integer> restFacadeResp0 = authController0.register(httpServletRequest0, registerRequest0);
-      
-      //Test Result Assert
-      assertFalse(restFacadeResp0.isSuccess());
-  }
+    @Test(timeout = 4000)
+    public void test_register_0() throws Throwable {
+        //caseID:caedf3ef2af6daac5040239478f4bff5
+        //CoveredLines: [28, 69, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 88, 89, 95, 96]
+        //Input_0_HttpServletRequest: {getSession=httpSession0}
+        //Input_1_RegisterRequest: {getPassword=\"org.apache.commons.io.filefilter.FalseFileFilter\" \"org.apache.commons.io.filefilter.FalseFileFilter\", getEmail=\"org.apache.commons.io.filefilter.FalseFileFilter\", getUserName=\"org.apache.commons.io.filefilter.FalseFileFilter\" \"org.apache.commons.io.filefilter.FalseFileFilter\"}
+        //Assert: assertFalse(method_result.isSuccess());
 
-  @Test(timeout = 4000)
-  public void test_register_1()  throws Throwable  {
-      //caseID:726710f939e2c6866dbe70d7635f6c50
-      //CoveredLines: [28, 69, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 91, 92, 93, 94, 96]
-      //Input_0_HttpServletRequest: {getSession=httpSession0}
-      //Input_1_RegisterRequest: {getPassword=\"org.apache.commons.io.filefilter.FalseFileFilter\" \"org.apache.commons.io.filefilter.FalseFileFilter\", getEmail=\"org.apache.commons.io.filefilter.FalseFileFilter\", getUserName=\"org.apache.commons.io.filefilter.FalseFileFilter\" \"org.apache.commons.io.filefilter.FalseFileFilter\"}
-      //Assert: assertFalse(method_result.isSuccess());
-      
-      AuthController authController0 = new AuthController();
-      //mock result0
-      Result<UserDetails> result0 = (Result<UserDetails>) mock(Result.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn("org.apache.commons.io.filefilter.FalseFileFilter").when(result0).getErrorMsg();
-      doReturn(true).when(result0).isSuccess();
-      //mock userService0
-      UserService userService0 = mock(UserService.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(result0).when(userService0).register(any(io.sofastack.cloud.common.model.UserDetails.class));
-      
-      PrivateAccess.setVariable((Class<?>) AuthController.class, authController0, "userService", (Object) userService0);
-      //mock httpSession0
-      HttpSession httpSession0 = mock(HttpSession.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      //mock httpServletRequest0
-      HttpServletRequest httpServletRequest0 = mock(HttpServletRequest.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(httpSession0).when(httpServletRequest0).getSession();
-      //mock registerRequest0
-      RegisterRequest registerRequest0 = mock(RegisterRequest.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn("org.apache.commons.io.filefilter.FalseFileFilter").when(registerRequest0).getEmail();
-      doReturn("org.apache.commons.io.filefilter.FalseFileFilter", "org.apache.commons.io.filefilter.FalseFileFilter").when(registerRequest0).getPassword();
-      doReturn("org.apache.commons.io.filefilter.FalseFileFilter", "org.apache.commons.io.filefilter.FalseFileFilter").when(registerRequest0).getUserName();
-      
-      //Call method: register
-      RestFacadeResp<Integer> restFacadeResp0 = authController0.register(httpServletRequest0, registerRequest0);
-      
-      //Test Result Assert
-      assertFalse(restFacadeResp0.isSuccess());
-  }
+        AuthController authController0 = new AuthController();
+        //mock result0
+        Result<UserDetails> result0 = (Result<UserDetails>) mock(Result.class, withSettings()
+            .defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        doReturn("org.apache.commons.io.filefilter.FalseFileFilter").when(result0).getErrorMsg();
+        doReturn(false).when(result0).isSuccess();
+        //mock userService0
+        UserService userService0 = mock(UserService.class,
+            withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        doReturn(result0).when(userService0).register(
+            any(io.sofastack.cloud.common.model.UserDetails.class));
 
-  @Test(timeout = 4000)
-  public void test_register_2()  throws Throwable  {
-      //caseID:524db6fc453427a831854ec392d8cdb4
-      //CoveredLines: [28, 69, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 95, 96]
-      //Input_0_HttpServletRequest: {getSession=httpSession0}
-      //Input_1_RegisterRequest: {getPassword=\"org.apache.commons.io.filefilter.FalseFileFilter\" \"org.apache.commons.io.filefilter.FalseFileFilter\", getEmail=\"org.apache.commons.io.filefilter.FalseFileFilter\", getUserName=\"org.apache.commons.io.filefilter.FalseFileFilter\" \"org.apache.commons.io.filefilter.FalseFileFilter\"}
-      //Assert: assertTrue(method_result.isSuccess());
-      
-      AuthController authController0 = new AuthController();
-      //mock accountService0
-      AccountService accountService0 = mock(AccountService.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      //mock userDetails0
-      UserDetails userDetails0 = mock(UserDetails.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      //mock result0
-      Result<UserDetails> result0 = (Result<UserDetails>) mock(Result.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(userDetails0).when(result0).getData();
-      doReturn(true).when(result0).isSuccess();
-      //mock userService0
-      UserService userService0 = mock(UserService.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(result0).when(userService0).register(any(io.sofastack.cloud.common.model.UserDetails.class));
-      
-      PrivateAccess.setVariable((Class<?>) AuthController.class, authController0, "userService", (Object) userService0);
-      
-      PrivateAccess.setVariable((Class<?>) AuthController.class, authController0, "accountService", (Object) accountService0);
-      //mock httpSession0
-      HttpSession httpSession0 = mock(HttpSession.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      //mock httpServletRequest0
-      HttpServletRequest httpServletRequest0 = mock(HttpServletRequest.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(httpSession0).when(httpServletRequest0).getSession();
-      //mock registerRequest0
-      RegisterRequest registerRequest0 = mock(RegisterRequest.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn("org.apache.commons.io.filefilter.FalseFileFilter").when(registerRequest0).getEmail();
-      doReturn("org.apache.commons.io.filefilter.FalseFileFilter", "org.apache.commons.io.filefilter.FalseFileFilter").when(registerRequest0).getPassword();
-      doReturn("org.apache.commons.io.filefilter.FalseFileFilter", "org.apache.commons.io.filefilter.FalseFileFilter").when(registerRequest0).getUserName();
-      
-      //Call method: register
-      RestFacadeResp<Integer> restFacadeResp0 = authController0.register(httpServletRequest0, registerRequest0);
-      
-      //Test Result Assert
-      assertTrue(restFacadeResp0.isSuccess());
-  }
+        PrivateAccess.setVariable((Class<?>) AuthController.class, authController0, "userService",
+            (Object) userService0);
+        //mock httpSession0
+        HttpSession httpSession0 = mock(HttpSession.class,
+            withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        //mock httpServletRequest0
+        HttpServletRequest httpServletRequest0 = mock(HttpServletRequest.class, withSettings()
+            .defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        doReturn(httpSession0).when(httpServletRequest0).getSession();
+        //mock registerRequest0
+        RegisterRequest registerRequest0 = mock(RegisterRequest.class, withSettings()
+            .defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        doReturn("org.apache.commons.io.filefilter.FalseFileFilter").when(registerRequest0)
+            .getEmail();
+        doReturn("org.apache.commons.io.filefilter.FalseFileFilter",
+            "org.apache.commons.io.filefilter.FalseFileFilter").when(registerRequest0)
+            .getPassword();
+        doReturn("org.apache.commons.io.filefilter.FalseFileFilter",
+            "org.apache.commons.io.filefilter.FalseFileFilter").when(registerRequest0)
+            .getUserName();
 
-  @Test(timeout = 4000)
-  public void test_valid_3()  throws Throwable  {
-      //caseID:32c9c6c8d7cd2627c88fbbe542362c33
-      //CoveredLines: [28, 40, 42, 43, 48, 53, 54, 60, 61, 62, 64]
-      //Input_0_HttpServletRequest: {getSession=httpSession0}
-      //Input_1_AuthRequest: null
-      //Assert: assertFalse(method_result.isSuccess());
-      
-      AuthController authController0 = new AuthController();
-      //mock userService0
-      UserService userService0 = mock(UserService.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      
-      PrivateAccess.setVariable((Class<?>) AuthController.class, authController0, "userService", (Object) userService0);
-      //mock httpSession0
-      HttpSession httpSession0 = mock(HttpSession.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      //mock httpServletRequest0
-      HttpServletRequest httpServletRequest0 = mock(HttpServletRequest.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(httpSession0).when(httpServletRequest0).getSession();
-      
-      //Call method: valid
-      RestFacadeResp<Integer> restFacadeResp0 = authController0.valid(httpServletRequest0, (AuthRequest) null);
-      
-      //Test Result Assert
-      assertFalse(restFacadeResp0.isSuccess());
-  }
+        //Call method: register
+        RestFacadeResp<Integer> restFacadeResp0 = authController0.register(httpServletRequest0,
+            registerRequest0);
 
-  @Test(timeout = 4000)
-  public void test_valid_4()  throws Throwable  {
-      //caseID:45f76e1d502acd7a81b3ae3d14494ed7
-      //CoveredLines: [28, 40, 42, 43, 48, 53, 54, 60, 61, 62, 64]
-      //Input_0_HttpServletRequest: {getSession=httpSession0}
-      //Input_1_AuthRequest: {getUserName=\"\"}
-      //Assert: assertFalse(method_result.isSuccess());
-      
-      AuthController authController0 = new AuthController();
-      //mock userService0
-      UserService userService0 = mock(UserService.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      
-      PrivateAccess.setVariable((Class<?>) AuthController.class, authController0, "userService", (Object) userService0);
-      //mock httpSession0
-      HttpSession httpSession0 = mock(HttpSession.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      //mock httpServletRequest0
-      HttpServletRequest httpServletRequest0 = mock(HttpServletRequest.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(httpSession0).when(httpServletRequest0).getSession();
-      //mock authRequest0
-      AuthRequest authRequest0 = mock(AuthRequest.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn("").when(authRequest0).getUserName();
-      
-      //Call method: valid
-      RestFacadeResp<Integer> restFacadeResp0 = authController0.valid(httpServletRequest0, authRequest0);
-      
-      //Test Result Assert
-      assertFalse(restFacadeResp0.isSuccess());
-  }
+        //Test Result Assert
+        assertFalse(restFacadeResp0.isSuccess());
+    }
 
-  @Test(timeout = 4000)
-  public void test_valid_5()  throws Throwable  {
-      //caseID:60db992c570f4aaab0ce4082a6ee86a7
-      //CoveredLines: [28, 40, 42, 43, 44, 45, 53, 54, 60, 61, 62, 64]
-      //Input_0_HttpServletRequest: {getSession=httpSession0}
-      //Input_1_AuthRequest: {getUserName=\"Failed to register user;\"}
-      //Assert: assertFalse(method_result.isSuccess());
-      
-      AuthController authController0 = new AuthController();
-      //mock userService0
-      UserService userService0 = mock(UserService.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      
-      PrivateAccess.setVariable((Class<?>) AuthController.class, authController0, "userService", (Object) userService0);
-      //mock httpSession0
-      HttpSession httpSession0 = mock(HttpSession.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      //mock httpServletRequest0
-      HttpServletRequest httpServletRequest0 = mock(HttpServletRequest.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(httpSession0).when(httpServletRequest0).getSession();
-      //mock authRequest0
-      AuthRequest authRequest0 = mock(AuthRequest.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn("Failed to register user;").when(authRequest0).getUserName();
-      
-      //Call method: valid
-      RestFacadeResp<Integer> restFacadeResp0 = authController0.valid(httpServletRequest0, authRequest0);
-      
-      //Test Result Assert
-      assertFalse(restFacadeResp0.isSuccess());
-  }
+    @Test(timeout = 4000)
+    public void test_register_1() throws Throwable {
+        //caseID:726710f939e2c6866dbe70d7635f6c50
+        //CoveredLines: [28, 69, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 91, 92, 93, 94, 96]
+        //Input_0_HttpServletRequest: {getSession=httpSession0}
+        //Input_1_RegisterRequest: {getPassword=\"org.apache.commons.io.filefilter.FalseFileFilter\" \"org.apache.commons.io.filefilter.FalseFileFilter\", getEmail=\"org.apache.commons.io.filefilter.FalseFileFilter\", getUserName=\"org.apache.commons.io.filefilter.FalseFileFilter\" \"org.apache.commons.io.filefilter.FalseFileFilter\"}
+        //Assert: assertFalse(method_result.isSuccess());
 
-  @Test(timeout = 4000)
-  public void test_valid_6()  throws Throwable  {
-      //caseID:e9636fdf380642561a04828694654df6
-      //CoveredLines: [28, 40, 42, 43, 48, 49, 50, 51, 53, 54, 58, 63, 64]
-      //Input_0_HttpServletRequest: {getSession=httpSession0}
-      //Input_1_AuthRequest: {getUserName=\"\"}
-      //Assert: assertFalse(method_result.isSuccess());
-      
-      AuthController authController0 = new AuthController();
-      //mock result0
-      Result<UserDetails> result0 = (Result<UserDetails>) mock(Result.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      //mock userService0
-      UserService userService0 = mock(UserService.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(result0).when(userService0).validate(any(io.sofastack.cloud.common.model.UserDetails.class));
-      
-      PrivateAccess.setVariable((Class<?>) AuthController.class, authController0, "userService", (Object) userService0);
-      //mock userDetails0
-      UserDetails userDetails0 = mock(UserDetails.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      //mock httpSession0
-      HttpSession httpSession0 = mock(HttpSession.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(userDetails0).when(httpSession0).getAttribute(anyString());
-      //mock httpServletRequest0
-      HttpServletRequest httpServletRequest0 = mock(HttpServletRequest.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(httpSession0).when(httpServletRequest0).getSession();
-      //mock authRequest0
-      AuthRequest authRequest0 = mock(AuthRequest.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn("").when(authRequest0).getUserName();
-      
-      //Call method: valid
-      RestFacadeResp<Integer> restFacadeResp0 = authController0.valid(httpServletRequest0, authRequest0);
-      
-      //Test Result Assert
-      assertFalse(restFacadeResp0.isSuccess());
-  }
+        AuthController authController0 = new AuthController();
+        //mock result0
+        Result<UserDetails> result0 = (Result<UserDetails>) mock(Result.class, withSettings()
+            .defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        doReturn("org.apache.commons.io.filefilter.FalseFileFilter").when(result0).getErrorMsg();
+        doReturn(true).when(result0).isSuccess();
+        //mock userService0
+        UserService userService0 = mock(UserService.class,
+            withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        doReturn(result0).when(userService0).register(
+            any(io.sofastack.cloud.common.model.UserDetails.class));
 
-  @Test(timeout = 4000)
-  public void test_valid_7()  throws Throwable  {
-      //caseID:704ed5ad290725a04955c5b372fe6d5f
-      //CoveredLines: [28, 40, 42, 43, 48, 49, 50, 51, 53, 54, 55, 56, 63, 64]
-      //Input_0_HttpServletRequest: {getSession=httpSession0 httpSession1}
-      //Input_1_AuthRequest: {getUserName=\"\"}
-      //Assert: assertTrue(method_result.isSuccess());
-      
-      AuthController authController0 = new AuthController();
-      //mock userDetails0
-      UserDetails userDetails0 = mock(UserDetails.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(1).when(userDetails0).getUserId();
-      //mock result0
-      Result<UserDetails> result0 = (Result<UserDetails>) mock(Result.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(userDetails0).when(result0).getData();
-      doReturn(true).when(result0).isSuccess();
-      //mock userService0
-      UserService userService0 = mock(UserService.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(result0).when(userService0).validate(any(io.sofastack.cloud.common.model.UserDetails.class));
-      
-      PrivateAccess.setVariable((Class<?>) AuthController.class, authController0, "userService", (Object) userService0);
-      //mock userDetails1
-      UserDetails userDetails1 = mock(UserDetails.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(")T>wOp@6dXU?DI.").when(userDetails1).getPassword();
-      doReturn("errorMsg").when(userDetails1).getUserName();
-      //mock userDetails2
-      UserDetails userDetails2 = mock(UserDetails.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      //mock httpSession0
-      HttpSession httpSession0 = mock(HttpSession.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(userDetails2).when(httpSession0).getAttribute(anyString());
-      //mock httpSession1
-      HttpSession httpSession1 = mock(HttpSession.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(userDetails1).when(httpSession1).getAttribute(anyString());
-      //mock httpServletRequest0
-      HttpServletRequest httpServletRequest0 = mock(HttpServletRequest.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(httpSession0, httpSession1).when(httpServletRequest0).getSession();
-      //mock authRequest0
-      AuthRequest authRequest0 = mock(AuthRequest.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn("").when(authRequest0).getUserName();
-      
-      //Call method: valid
-      RestFacadeResp<Integer> restFacadeResp0 = authController0.valid(httpServletRequest0, authRequest0);
-      
-      //Test Result Assert
-      assertTrue(restFacadeResp0.isSuccess());
-  }
+        PrivateAccess.setVariable((Class<?>) AuthController.class, authController0, "userService",
+            (Object) userService0);
+        //mock httpSession0
+        HttpSession httpSession0 = mock(HttpSession.class,
+            withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        //mock httpServletRequest0
+        HttpServletRequest httpServletRequest0 = mock(HttpServletRequest.class, withSettings()
+            .defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        doReturn(httpSession0).when(httpServletRequest0).getSession();
+        //mock registerRequest0
+        RegisterRequest registerRequest0 = mock(RegisterRequest.class, withSettings()
+            .defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        doReturn("org.apache.commons.io.filefilter.FalseFileFilter").when(registerRequest0)
+            .getEmail();
+        doReturn("org.apache.commons.io.filefilter.FalseFileFilter",
+            "org.apache.commons.io.filefilter.FalseFileFilter").when(registerRequest0)
+            .getPassword();
+        doReturn("org.apache.commons.io.filefilter.FalseFileFilter",
+            "org.apache.commons.io.filefilter.FalseFileFilter").when(registerRequest0)
+            .getUserName();
+
+        //Call method: register
+        RestFacadeResp<Integer> restFacadeResp0 = authController0.register(httpServletRequest0,
+            registerRequest0);
+
+        //Test Result Assert
+        assertFalse(restFacadeResp0.isSuccess());
+    }
+
+    @Test(timeout = 4000)
+    public void test_register_2() throws Throwable {
+        //caseID:524db6fc453427a831854ec392d8cdb4
+        //CoveredLines: [28, 69, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 95, 96]
+        //Input_0_HttpServletRequest: {getSession=httpSession0}
+        //Input_1_RegisterRequest: {getPassword=\"org.apache.commons.io.filefilter.FalseFileFilter\" \"org.apache.commons.io.filefilter.FalseFileFilter\", getEmail=\"org.apache.commons.io.filefilter.FalseFileFilter\", getUserName=\"org.apache.commons.io.filefilter.FalseFileFilter\" \"org.apache.commons.io.filefilter.FalseFileFilter\"}
+        //Assert: assertTrue(method_result.isSuccess());
+
+        AuthController authController0 = new AuthController();
+        //mock accountService0
+        AccountService accountService0 = mock(AccountService.class,
+            withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        //mock userDetails0
+        UserDetails userDetails0 = mock(UserDetails.class,
+            withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        //mock result0
+        Result<UserDetails> result0 = (Result<UserDetails>) mock(Result.class, withSettings()
+            .defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        doReturn(userDetails0).when(result0).getData();
+        doReturn(true).when(result0).isSuccess();
+        //mock userService0
+        UserService userService0 = mock(UserService.class,
+            withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        doReturn(result0).when(userService0).register(
+            any(io.sofastack.cloud.common.model.UserDetails.class));
+
+        PrivateAccess.setVariable((Class<?>) AuthController.class, authController0, "userService",
+            (Object) userService0);
+
+        PrivateAccess.setVariable((Class<?>) AuthController.class, authController0,
+            "accountService", (Object) accountService0);
+        //mock httpSession0
+        HttpSession httpSession0 = mock(HttpSession.class,
+            withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        //mock httpServletRequest0
+        HttpServletRequest httpServletRequest0 = mock(HttpServletRequest.class, withSettings()
+            .defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        doReturn(httpSession0).when(httpServletRequest0).getSession();
+        //mock registerRequest0
+        RegisterRequest registerRequest0 = mock(RegisterRequest.class, withSettings()
+            .defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        doReturn("org.apache.commons.io.filefilter.FalseFileFilter").when(registerRequest0)
+            .getEmail();
+        doReturn("org.apache.commons.io.filefilter.FalseFileFilter",
+            "org.apache.commons.io.filefilter.FalseFileFilter").when(registerRequest0)
+            .getPassword();
+        doReturn("org.apache.commons.io.filefilter.FalseFileFilter",
+            "org.apache.commons.io.filefilter.FalseFileFilter").when(registerRequest0)
+            .getUserName();
+
+        //Call method: register
+        RestFacadeResp<Integer> restFacadeResp0 = authController0.register(httpServletRequest0,
+            registerRequest0);
+
+        //Test Result Assert
+        assertTrue(restFacadeResp0.isSuccess());
+    }
+
+    @Test(timeout = 4000)
+    public void test_valid_3() throws Throwable {
+        //caseID:32c9c6c8d7cd2627c88fbbe542362c33
+        //CoveredLines: [28, 40, 42, 43, 48, 53, 54, 60, 61, 62, 64]
+        //Input_0_HttpServletRequest: {getSession=httpSession0}
+        //Input_1_AuthRequest: null
+        //Assert: assertFalse(method_result.isSuccess());
+
+        AuthController authController0 = new AuthController();
+        //mock userService0
+        UserService userService0 = mock(UserService.class,
+            withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+
+        PrivateAccess.setVariable((Class<?>) AuthController.class, authController0, "userService",
+            (Object) userService0);
+        //mock httpSession0
+        HttpSession httpSession0 = mock(HttpSession.class,
+            withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        //mock httpServletRequest0
+        HttpServletRequest httpServletRequest0 = mock(HttpServletRequest.class, withSettings()
+            .defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        doReturn(httpSession0).when(httpServletRequest0).getSession();
+
+        //Call method: valid
+        RestFacadeResp<Integer> restFacadeResp0 = authController0.valid(httpServletRequest0,
+            (AuthRequest) null);
+
+        //Test Result Assert
+        assertFalse(restFacadeResp0.isSuccess());
+    }
+
+    @Test(timeout = 4000)
+    public void test_valid_4() throws Throwable {
+        //caseID:45f76e1d502acd7a81b3ae3d14494ed7
+        //CoveredLines: [28, 40, 42, 43, 48, 53, 54, 60, 61, 62, 64]
+        //Input_0_HttpServletRequest: {getSession=httpSession0}
+        //Input_1_AuthRequest: {getUserName=\"\"}
+        //Assert: assertFalse(method_result.isSuccess());
+
+        AuthController authController0 = new AuthController();
+        //mock userService0
+        UserService userService0 = mock(UserService.class,
+            withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+
+        PrivateAccess.setVariable((Class<?>) AuthController.class, authController0, "userService",
+            (Object) userService0);
+        //mock httpSession0
+        HttpSession httpSession0 = mock(HttpSession.class,
+            withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        //mock httpServletRequest0
+        HttpServletRequest httpServletRequest0 = mock(HttpServletRequest.class, withSettings()
+            .defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        doReturn(httpSession0).when(httpServletRequest0).getSession();
+        //mock authRequest0
+        AuthRequest authRequest0 = mock(AuthRequest.class,
+            withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        doReturn("").when(authRequest0).getUserName();
+
+        //Call method: valid
+        RestFacadeResp<Integer> restFacadeResp0 = authController0.valid(httpServletRequest0,
+            authRequest0);
+
+        //Test Result Assert
+        assertFalse(restFacadeResp0.isSuccess());
+    }
+
+    @Test(timeout = 4000)
+    public void test_valid_5() throws Throwable {
+        //caseID:60db992c570f4aaab0ce4082a6ee86a7
+        //CoveredLines: [28, 40, 42, 43, 44, 45, 53, 54, 60, 61, 62, 64]
+        //Input_0_HttpServletRequest: {getSession=httpSession0}
+        //Input_1_AuthRequest: {getUserName=\"Failed to register user;\"}
+        //Assert: assertFalse(method_result.isSuccess());
+
+        AuthController authController0 = new AuthController();
+        //mock userService0
+        UserService userService0 = mock(UserService.class,
+            withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+
+        PrivateAccess.setVariable((Class<?>) AuthController.class, authController0, "userService",
+            (Object) userService0);
+        //mock httpSession0
+        HttpSession httpSession0 = mock(HttpSession.class,
+            withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        //mock httpServletRequest0
+        HttpServletRequest httpServletRequest0 = mock(HttpServletRequest.class, withSettings()
+            .defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        doReturn(httpSession0).when(httpServletRequest0).getSession();
+        //mock authRequest0
+        AuthRequest authRequest0 = mock(AuthRequest.class,
+            withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        doReturn("Failed to register user;").when(authRequest0).getUserName();
+
+        //Call method: valid
+        RestFacadeResp<Integer> restFacadeResp0 = authController0.valid(httpServletRequest0,
+            authRequest0);
+
+        //Test Result Assert
+        assertFalse(restFacadeResp0.isSuccess());
+    }
+
+    @Test(timeout = 4000)
+    public void test_valid_6() throws Throwable {
+        //caseID:e9636fdf380642561a04828694654df6
+        //CoveredLines: [28, 40, 42, 43, 48, 49, 50, 51, 53, 54, 58, 63, 64]
+        //Input_0_HttpServletRequest: {getSession=httpSession0}
+        //Input_1_AuthRequest: {getUserName=\"\"}
+        //Assert: assertFalse(method_result.isSuccess());
+
+        AuthController authController0 = new AuthController();
+        //mock result0
+        Result<UserDetails> result0 = (Result<UserDetails>) mock(Result.class, withSettings()
+            .defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        //mock userService0
+        UserService userService0 = mock(UserService.class,
+            withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        doReturn(result0).when(userService0).validate(
+            any(io.sofastack.cloud.common.model.UserDetails.class));
+
+        PrivateAccess.setVariable((Class<?>) AuthController.class, authController0, "userService",
+            (Object) userService0);
+        //mock userDetails0
+        UserDetails userDetails0 = mock(UserDetails.class,
+            withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        //mock httpSession0
+        HttpSession httpSession0 = mock(HttpSession.class,
+            withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        doReturn(userDetails0).when(httpSession0).getAttribute(anyString());
+        //mock httpServletRequest0
+        HttpServletRequest httpServletRequest0 = mock(HttpServletRequest.class, withSettings()
+            .defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        doReturn(httpSession0).when(httpServletRequest0).getSession();
+        //mock authRequest0
+        AuthRequest authRequest0 = mock(AuthRequest.class,
+            withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        doReturn("").when(authRequest0).getUserName();
+
+        //Call method: valid
+        RestFacadeResp<Integer> restFacadeResp0 = authController0.valid(httpServletRequest0,
+            authRequest0);
+
+        //Test Result Assert
+        assertFalse(restFacadeResp0.isSuccess());
+    }
+
+    @Test(timeout = 4000)
+    public void test_valid_7() throws Throwable {
+        //caseID:704ed5ad290725a04955c5b372fe6d5f
+        //CoveredLines: [28, 40, 42, 43, 48, 49, 50, 51, 53, 54, 55, 56, 63, 64]
+        //Input_0_HttpServletRequest: {getSession=httpSession0 httpSession1}
+        //Input_1_AuthRequest: {getUserName=\"\"}
+        //Assert: assertTrue(method_result.isSuccess());
+
+        AuthController authController0 = new AuthController();
+        //mock userDetails0
+        UserDetails userDetails0 = mock(UserDetails.class,
+            withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        doReturn(1).when(userDetails0).getUserId();
+        //mock result0
+        Result<UserDetails> result0 = (Result<UserDetails>) mock(Result.class, withSettings()
+            .defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        doReturn(userDetails0).when(result0).getData();
+        doReturn(true).when(result0).isSuccess();
+        //mock userService0
+        UserService userService0 = mock(UserService.class,
+            withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        doReturn(result0).when(userService0).validate(
+            any(io.sofastack.cloud.common.model.UserDetails.class));
+
+        PrivateAccess.setVariable((Class<?>) AuthController.class, authController0, "userService",
+            (Object) userService0);
+        //mock userDetails1
+        UserDetails userDetails1 = mock(UserDetails.class,
+            withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        doReturn(")T>wOp@6dXU?DI.").when(userDetails1).getPassword();
+        doReturn("errorMsg").when(userDetails1).getUserName();
+        //mock userDetails2
+        UserDetails userDetails2 = mock(UserDetails.class,
+            withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        //mock httpSession0
+        HttpSession httpSession0 = mock(HttpSession.class,
+            withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        doReturn(userDetails2).when(httpSession0).getAttribute(anyString());
+        //mock httpSession1
+        HttpSession httpSession1 = mock(HttpSession.class,
+            withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        doReturn(userDetails1).when(httpSession1).getAttribute(anyString());
+        //mock httpServletRequest0
+        HttpServletRequest httpServletRequest0 = mock(HttpServletRequest.class, withSettings()
+            .defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        doReturn(httpSession0, httpSession1).when(httpServletRequest0).getSession();
+        //mock authRequest0
+        AuthRequest authRequest0 = mock(AuthRequest.class,
+            withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        doReturn("").when(authRequest0).getUserName();
+
+        //Call method: valid
+        RestFacadeResp<Integer> restFacadeResp0 = authController0.valid(httpServletRequest0,
+            authRequest0);
+
+        //Test Result Assert
+        assertTrue(restFacadeResp0.isSuccess());
+    }
 }

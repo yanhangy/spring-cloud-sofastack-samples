@@ -14,95 +14,129 @@ import org.smartunit.runtime.sandbox.Sandbox;
 import org.smartunit.runtime.sandbox.Sandbox.SandboxMode;
 
 import static org.smartunit.shaded.org.mockito.Mockito.*;
+
 @SmartSuiteClassExclude
 public class Curator4ZookeeperRegistry_SSTest_scaffolding {
 
-  @org.junit.Rule 
-  public org.smartunit.runtime.vnet.NonFunctionalRequirementRule nfr = new org.smartunit.runtime.vnet.NonFunctionalRequirementRule();
+    @org.junit.Rule
+    public org.smartunit.runtime.vnet.NonFunctionalRequirementRule nfr               = new org.smartunit.runtime.vnet.NonFunctionalRequirementRule();
 
-  private static final java.util.Properties defaultProperties = (java.util.Properties) java.lang.System.getProperties().clone(); 
+    private static final java.util.Properties                      defaultProperties = (java.util.Properties) java.lang.System
+                                                                                         .getProperties()
+                                                                                         .clone();
 
-  private final org.smartunit.runtime.thread.ThreadStopper threadStopper =  new org.smartunit.runtime.thread.ThreadStopper (org.smartunit.runtime.thread.KillSwitchHandler.getInstance(), 3000);
+    private final org.smartunit.runtime.thread.ThreadStopper       threadStopper     = new org.smartunit.runtime.thread.ThreadStopper(
+                                                                                         org.smartunit.runtime.thread.KillSwitchHandler
+                                                                                             .getInstance(),
+                                                                                         3000);
 
+    @BeforeClass
+    public static void initSmartSuiteFramework() {
+        org.smartunit.runtime.RuntimeSettings.className = "com.alipay.sofa.rpc.registry.zk.Curator4ZookeeperRegistry";
+        org.smartunit.runtime.GuiSupport.initialize();
+        org.smartunit.runtime.RuntimeSettings.maxNumberOfThreads = 100;
+        org.smartunit.runtime.RuntimeSettings.maxNumberOfIterationsPerLoop = Long.MAX_VALUE;
+        org.smartunit.runtime.RuntimeSettings.mockSystemIn = true;
+        org.smartunit.runtime.RuntimeSettings.sandboxMode = org.smartunit.runtime.sandbox.Sandbox.SandboxMode.RECOMMENDED;
+        org.smartunit.runtime.sandbox.Sandbox.initializeSecurityManagerForSUT();
+        org.smartunit.runtime.classhandling.JDKClassResetter.init();
+        setSystemProperties();
+        initializeClasses();
+        org.smartunit.runtime.Runtime.getInstance().resetRuntime();
+        try {
+            initMocksToAvoidTimeoutsInTheTests();
+        } catch (ClassNotFoundException e) {
+        }
+    }
 
-  @BeforeClass 
-  public static void initSmartSuiteFramework() { 
-    org.smartunit.runtime.RuntimeSettings.className = "com.alipay.sofa.rpc.registry.zk.Curator4ZookeeperRegistry"; 
-    org.smartunit.runtime.GuiSupport.initialize(); 
-    org.smartunit.runtime.RuntimeSettings.maxNumberOfThreads = 100; 
-    org.smartunit.runtime.RuntimeSettings.maxNumberOfIterationsPerLoop = Long.MAX_VALUE; 
-    org.smartunit.runtime.RuntimeSettings.mockSystemIn = true; 
-    org.smartunit.runtime.RuntimeSettings.sandboxMode = org.smartunit.runtime.sandbox.Sandbox.SandboxMode.RECOMMENDED; 
-    org.smartunit.runtime.sandbox.Sandbox.initializeSecurityManagerForSUT(); 
-    org.smartunit.runtime.classhandling.JDKClassResetter.init();
-    setSystemProperties();
-    initializeClasses();
-    org.smartunit.runtime.Runtime.getInstance().resetRuntime(); 
-    try { initMocksToAvoidTimeoutsInTheTests(); } catch(ClassNotFoundException e) {} 
-  } 
+    @AfterClass
+    public static void clearSmartSuiteFramework() {
+        resetClasses();
+        Sandbox.resetDefaultSecurityManager();
+        java.lang.System.setProperties((java.util.Properties) defaultProperties.clone());
+    }
 
-  @AfterClass 
-  public static void clearSmartSuiteFramework(){ 
-    resetClasses(); 
-    Sandbox.resetDefaultSecurityManager(); 
-    java.lang.System.setProperties((java.util.Properties) defaultProperties.clone()); 
-  } 
+    @Before
+    public void initTestCase() {
+        threadStopper.storeCurrentThreads();
+        threadStopper.startRecordingTime();
+        org.smartunit.runtime.jvm.ShutdownHookHandler.getInstance().initHandler();
+        org.smartunit.runtime.sandbox.Sandbox.goingToExecuteSUTCode();
+        setSystemProperties();
+        org.smartunit.runtime.GuiSupport.setHeadless();
+        org.smartunit.runtime.Runtime.getInstance().resetRuntime();
+        org.smartunit.runtime.agent.InstrumentingAgent.activate();
+    }
 
-  @Before 
-  public void initTestCase(){ 
-    threadStopper.storeCurrentThreads();
-    threadStopper.startRecordingTime();
-    org.smartunit.runtime.jvm.ShutdownHookHandler.getInstance().initHandler(); 
-    org.smartunit.runtime.sandbox.Sandbox.goingToExecuteSUTCode(); 
-    setSystemProperties(); 
-    org.smartunit.runtime.GuiSupport.setHeadless(); 
-    org.smartunit.runtime.Runtime.getInstance().resetRuntime(); 
-    org.smartunit.runtime.agent.InstrumentingAgent.activate(); 
-  } 
+    @After
+    public void doneWithTestCase() {
+        threadStopper.killAndJoinClientThreads();
+        org.smartunit.runtime.jvm.ShutdownHookHandler.getInstance().safeExecuteAddedHooks();
+        org.smartunit.runtime.classhandling.JDKClassResetter.reset();
+        org.smartunit.runtime.classhandling.ClassStateSupport.resetCUT();
+        org.smartunit.runtime.sandbox.Sandbox.doneWithExecutingSUTCode();
+        org.smartunit.runtime.agent.InstrumentingAgent.deactivate();
+        org.smartunit.runtime.GuiSupport.restoreHeadlessMode();
+    }
 
-  @After 
-  public void doneWithTestCase(){ 
-    threadStopper.killAndJoinClientThreads();
-    org.smartunit.runtime.jvm.ShutdownHookHandler.getInstance().safeExecuteAddedHooks(); 
-    org.smartunit.runtime.classhandling.JDKClassResetter.reset(); 
-    org.smartunit.runtime.classhandling.ClassStateSupport.resetCUT(); 
-    org.smartunit.runtime.sandbox.Sandbox.doneWithExecutingSUTCode(); 
-    org.smartunit.runtime.agent.InstrumentingAgent.deactivate(); 
-    org.smartunit.runtime.GuiSupport.restoreHeadlessMode(); 
-  } 
+    public static void setSystemProperties() {
 
-  public static void setSystemProperties() {
- 
-    java.lang.System.setProperties((java.util.Properties) defaultProperties.clone()); 
-    java.lang.System.setProperty("file.encoding", "UTF-8"); 
-    java.lang.System.setProperty("logging.path", "/root/logs"); 
-    java.lang.System.setProperty("loggingRoot", "/root/logs"); 
-    java.lang.System.setProperty("logback.configurationFile", "logback-ctg.xml"); 
-    java.lang.System.setProperty("java.io.tmpdir", "/tmp"); 
-  }
-  private static void initMocksToAvoidTimeoutsInTheTests() throws ClassNotFoundException { 
-    mock(Class.forName("com.alipay.sofa.rpc.base.Destroyable$DestroyHook", false, Curator4ZookeeperRegistry_SSTest_scaffolding.class.getClassLoader()), withSettings().stubOnly());
-    mock(Class.forName("com.alipay.sofa.rpc.config.AbstractInterfaceConfig", false, Curator4ZookeeperRegistry_SSTest_scaffolding.class.getClassLoader()), withSettings().stubOnly());
-    mock(Class.forName("com.alipay.sofa.rpc.config.ConsumerConfig", false, Curator4ZookeeperRegistry_SSTest_scaffolding.class.getClassLoader()), withSettings().stubOnly());
-    mock(Class.forName("com.alipay.sofa.rpc.config.ProviderConfig", false, Curator4ZookeeperRegistry_SSTest_scaffolding.class.getClassLoader()), withSettings().stubOnly());
-    mock(Class.forName("com.alipay.sofa.rpc.config.RegistryConfig", false, Curator4ZookeeperRegistry_SSTest_scaffolding.class.getClassLoader()), withSettings().stubOnly());
-    mock(Class.forName("com.alipay.sofa.rpc.listener.ConfigListener", false, Curator4ZookeeperRegistry_SSTest_scaffolding.class.getClassLoader()), withSettings().stubOnly());
-    mock(Class.forName("com.alipay.sofa.rpc.registry.zk.Curator4ZookeeperRegistry", false, Curator4ZookeeperRegistry_SSTest_scaffolding.class.getClassLoader()), withSettings().stubOnly());
-    mock(Class.forName("com.alipay.sofa.rpc.registry.zk.ZookeeperConfigObserver", false, Curator4ZookeeperRegistry_SSTest_scaffolding.class.getClassLoader()), withSettings().stubOnly());
-    mock(Class.forName("com.alipay.sofa.rpc.registry.zk.ZookeeperOverrideObserver", false, Curator4ZookeeperRegistry_SSTest_scaffolding.class.getClassLoader()), withSettings().stubOnly());
-    mock(Class.forName("com.alipay.sofa.rpc.registry.zk.ZookeeperProviderObserver", false, Curator4ZookeeperRegistry_SSTest_scaffolding.class.getClassLoader()), withSettings().stubOnly());
-    mock(Class.forName("java.util.Map", false, Curator4ZookeeperRegistry_SSTest_scaffolding.class.getClassLoader()), withSettings().stubOnly());
-    mock(Class.forName("org.apache.curator.framework.CuratorFramework", false, Curator4ZookeeperRegistry_SSTest_scaffolding.class.getClassLoader()), withSettings().stubOnly());
-  }
+        java.lang.System.setProperties((java.util.Properties) defaultProperties.clone());
+        java.lang.System.setProperty("file.encoding", "UTF-8");
+        java.lang.System.setProperty("logging.path", "/root/logs");
+        java.lang.System.setProperty("loggingRoot", "/root/logs");
+        java.lang.System.setProperty("logback.configurationFile", "logback-ctg.xml");
+        java.lang.System.setProperty("java.io.tmpdir", "/tmp");
+    }
 
-  private static void initializeClasses() {
-    org.smartunit.runtime.classhandling.ClassStateSupport.initializeClasses(Curator4ZookeeperRegistry_SSTest_scaffolding.class.getClassLoader() , ""
-    );
-  } 
+    private static void initMocksToAvoidTimeoutsInTheTests() throws ClassNotFoundException {
+        mock(Class.forName("com.alipay.sofa.rpc.base.Destroyable$DestroyHook", false,
+            Curator4ZookeeperRegistry_SSTest_scaffolding.class.getClassLoader()), withSettings()
+            .stubOnly());
+        mock(Class.forName("com.alipay.sofa.rpc.config.AbstractInterfaceConfig", false,
+            Curator4ZookeeperRegistry_SSTest_scaffolding.class.getClassLoader()), withSettings()
+            .stubOnly());
+        mock(Class.forName("com.alipay.sofa.rpc.config.ConsumerConfig", false,
+            Curator4ZookeeperRegistry_SSTest_scaffolding.class.getClassLoader()), withSettings()
+            .stubOnly());
+        mock(Class.forName("com.alipay.sofa.rpc.config.ProviderConfig", false,
+            Curator4ZookeeperRegistry_SSTest_scaffolding.class.getClassLoader()), withSettings()
+            .stubOnly());
+        mock(Class.forName("com.alipay.sofa.rpc.config.RegistryConfig", false,
+            Curator4ZookeeperRegistry_SSTest_scaffolding.class.getClassLoader()), withSettings()
+            .stubOnly());
+        mock(Class.forName("com.alipay.sofa.rpc.listener.ConfigListener", false,
+            Curator4ZookeeperRegistry_SSTest_scaffolding.class.getClassLoader()), withSettings()
+            .stubOnly());
+        mock(Class.forName("com.alipay.sofa.rpc.registry.zk.Curator4ZookeeperRegistry", false,
+            Curator4ZookeeperRegistry_SSTest_scaffolding.class.getClassLoader()), withSettings()
+            .stubOnly());
+        mock(Class.forName("com.alipay.sofa.rpc.registry.zk.ZookeeperConfigObserver", false,
+            Curator4ZookeeperRegistry_SSTest_scaffolding.class.getClassLoader()), withSettings()
+            .stubOnly());
+        mock(Class.forName("com.alipay.sofa.rpc.registry.zk.ZookeeperOverrideObserver", false,
+            Curator4ZookeeperRegistry_SSTest_scaffolding.class.getClassLoader()), withSettings()
+            .stubOnly());
+        mock(Class.forName("com.alipay.sofa.rpc.registry.zk.ZookeeperProviderObserver", false,
+            Curator4ZookeeperRegistry_SSTest_scaffolding.class.getClassLoader()), withSettings()
+            .stubOnly());
+        mock(Class.forName("java.util.Map", false,
+            Curator4ZookeeperRegistry_SSTest_scaffolding.class.getClassLoader()), withSettings()
+            .stubOnly());
+        mock(Class.forName("org.apache.curator.framework.CuratorFramework", false,
+            Curator4ZookeeperRegistry_SSTest_scaffolding.class.getClassLoader()), withSettings()
+            .stubOnly());
+    }
 
-  private static void resetClasses() {
-    org.smartunit.runtime.classhandling.ClassResetter.getInstance().setClassLoader(Curator4ZookeeperRegistry_SSTest_scaffolding.class.getClassLoader()); 
+    private static void initializeClasses() {
+        org.smartunit.runtime.classhandling.ClassStateSupport.initializeClasses(
+            Curator4ZookeeperRegistry_SSTest_scaffolding.class.getClassLoader(), "");
+    }
 
-    org.smartunit.runtime.classhandling.ClassStateSupport.resetClasses();
-  }
+    private static void resetClasses() {
+        org.smartunit.runtime.classhandling.ClassResetter.getInstance().setClassLoader(
+            Curator4ZookeeperRegistry_SSTest_scaffolding.class.getClassLoader());
+
+        org.smartunit.runtime.classhandling.ClassStateSupport.resetClasses();
+    }
 }

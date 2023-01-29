@@ -23,144 +23,159 @@ import org.smartunit.runtime.SmartRunnerParameters;
 import org.smartunit.runtime.TransactionTemplateAnswer;
 import org.smartunit.runtime.ViolatedAssumptionAnswer;
 
-@RunWith(SmartRunner.class) @SmartRunnerParameters(mockJVMNonDeterminism = true, useVFS = true, useVNET = true, resetStaticState = true) 
+@RunWith(SmartRunner.class)
+@SmartRunnerParameters(mockJVMNonDeterminism = true, useVFS = true, useVNET = true, resetStaticState = true)
 public class UserService_SSTest extends UserService_SSTest_scaffolding {
-// allCoveredLines:[15, 29, 39, 49, 51, 52, 53, 55, 57, 58, 59, 60, 71]
+    // allCoveredLines:[15, 29, 39, 49, 51, 52, 53, 55, 57, 58, 59, 60, 71]
 
-  @Test(timeout = 4000)
-  public void test_isAlreadyExist_0()  throws Throwable  {
-      //caseID:de94896de12effde75491975671a1dc2
-      //CoveredLines: [15, 49, 51, 52, 59, 60]
-      //Input_0_UserDetails: {getUserName=\"1\"}
-      //Assert: assertFalse(method_result);
-      
-      UserService userService0 = new UserService();
-      Long long0 = new Long((-1L));
-      //mock userRepository0
-      UserRepository userRepository0 = mock(UserRepository.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(long0).when(userRepository0).countByUserName(nullable(java.lang.String.class));
-      
-      PrivateAccess.setVariable((Class<?>) UserService.class, userService0, "userRepository", (Object) userRepository0);
-      //mock userDetails0
-      UserDetails userDetails0 = mock(UserDetails.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn("1").when(userDetails0).getUserName();
-      
-      //Call method: isAlreadyExist
-      boolean boolean0 = userService0.isAlreadyExist(userDetails0);
-      
-      //Test Result Assert
-      assertFalse(boolean0);
-  }
+    @Test(timeout = 4000)
+    public void test_isAlreadyExist_0() throws Throwable {
+        //caseID:de94896de12effde75491975671a1dc2
+        //CoveredLines: [15, 49, 51, 52, 59, 60]
+        //Input_0_UserDetails: {getUserName=\"1\"}
+        //Assert: assertFalse(method_result);
 
-  @Test(timeout = 4000)
-  public void test_isAlreadyExist_1()  throws Throwable  {
-      //caseID:9c5d21c06efb3842489e13e9a23af254
-      //CoveredLines: [15, 49, 51, 52, 53, 59, 60]
-      //Input_0_UserDetails: {getUserName=\"\"}
-      //Assert: assertTrue(method_result);
-      
-      UserService userService0 = new UserService();
-      Long long0 = new Long(3571L);
-      //mock userRepository0
-      UserRepository userRepository0 = mock(UserRepository.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(long0).when(userRepository0).countByUserName(nullable(java.lang.String.class));
-      
-      PrivateAccess.setVariable((Class<?>) UserService.class, userService0, "userRepository", (Object) userRepository0);
-      //mock userDetails0
-      UserDetails userDetails0 = mock(UserDetails.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn("").when(userDetails0).getUserName();
-      
-      //Call method: isAlreadyExist
-      boolean boolean0 = userService0.isAlreadyExist(userDetails0);
-      
-      //Test Result Assert
-      assertTrue(boolean0);
-  }
+        UserService userService0 = new UserService();
+        Long long0 = new Long((-1L));
+        //mock userRepository0
+        UserRepository userRepository0 = mock(UserRepository.class,
+            withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        doReturn(long0).when(userRepository0).countByUserName(nullable(java.lang.String.class));
 
-  @Test(timeout = 4000)
-  public void test_isAlreadyExist_2()  throws Throwable  {
-      //caseID:151480eeb02e31d236ae33e5935e02f5
-      //CoveredLines: [15, 49, 51, 55, 57, 58, 60]
-      //Input_0_UserDetails: {}
-      //Assert: assertTrue(method_result);
-      
-      UserService userService0 = new UserService();
-      //mock userDetails0
-      UserDetails userDetails0 = mock(UserDetails.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      
-      //Call method: isAlreadyExist
-      boolean boolean0 = userService0.isAlreadyExist(userDetails0);
-      
-      //Test Result Assert
-      assertTrue(boolean0);
-  }
+        PrivateAccess.setVariable((Class<?>) UserService.class, userService0, "userRepository",
+            (Object) userRepository0);
+        //mock userDetails0
+        UserDetails userDetails0 = mock(UserDetails.class,
+            withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        doReturn("1").when(userDetails0).getUserName();
 
-  @Test(timeout = 4000)
-  public void test_queryUserDetails_3()  throws Throwable  {
-      //caseID:40297c081c750b58e81ef4eb45ad11e7
-      //CoveredLines: [15, 29]
-      //Input_0_int: 10
-      
-      UserService userService0 = new UserService();
-      
-      Optional<UserDetails> optional0 = Optional.empty();
-      //mock userRepository0
-      UserRepository userRepository0 = mock(UserRepository.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(optional0).when(userRepository0).findById(anyInt());
-      
-      PrivateAccess.setVariable((Class<?>) UserService.class, userService0, "userRepository", (Object) userRepository0);
-      
-      //Call method: queryUserDetails
-      // Undeclared exception!
-      try { 
-        userService0.queryUserDetails(10);
-      } catch(Throwable e) {
-         verifyException("java.util.Optional", e);
-         assertEquals("java.util.NoSuchElementException", e.getClass().getName());
-         assertEquals("No value present", e.getMessage());
-      }
-  }
+        //Call method: isAlreadyExist
+        boolean boolean0 = userService0.isAlreadyExist(userDetails0);
 
-  @Test(timeout = 4000)
-  public void test_register_4()  throws Throwable  {
-      //caseID:dfbd4b7036ce8260c14b0a3ea18dd6a6
-      //CoveredLines: [15, 39]
-      //Input_0_UserDetails: {}
-      //Assert: assertNull(method_result);
-      
-      UserService userService0 = new UserService();
-      //mock userRepository0
-      UserRepository userRepository0 = mock(UserRepository.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      
-      PrivateAccess.setVariable((Class<?>) UserService.class, userService0, "userRepository", (Object) userRepository0);
-      //mock userDetails0
-      UserDetails userDetails0 = mock(UserDetails.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      
-      //Call method: register
-      UserDetails userDetails1 = userService0.register(userDetails0);
-      
-      //Test Result Assert
-      assertNull(userDetails1);
-  }
+        //Test Result Assert
+        assertFalse(boolean0);
+    }
 
-  @Test(timeout = 4000)
-  public void test_validate_5()  throws Throwable  {
-      //caseID:323679c589bc0eca98a68c9618bca137
-      //CoveredLines: [15, 71]
-      //Input_0_String: Error to check registry
-      //Input_1_String: 192
-      //Assert: assertNull(method_result);
-      
-      UserService userService0 = new UserService();
-      //mock userRepository0
-      UserRepository userRepository0 = mock(UserRepository.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      
-      PrivateAccess.setVariable((Class<?>) UserService.class, userService0, "userRepository", (Object) userRepository0);
-      
-      //Call method: validate
-      UserDetails userDetails0 = userService0.validate("Error to check registry", "192");
-      
-      //Test Result Assert
-      assertNull(userDetails0);
-  }
+    @Test(timeout = 4000)
+    public void test_isAlreadyExist_1() throws Throwable {
+        //caseID:9c5d21c06efb3842489e13e9a23af254
+        //CoveredLines: [15, 49, 51, 52, 53, 59, 60]
+        //Input_0_UserDetails: {getUserName=\"\"}
+        //Assert: assertTrue(method_result);
+
+        UserService userService0 = new UserService();
+        Long long0 = new Long(3571L);
+        //mock userRepository0
+        UserRepository userRepository0 = mock(UserRepository.class,
+            withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        doReturn(long0).when(userRepository0).countByUserName(nullable(java.lang.String.class));
+
+        PrivateAccess.setVariable((Class<?>) UserService.class, userService0, "userRepository",
+            (Object) userRepository0);
+        //mock userDetails0
+        UserDetails userDetails0 = mock(UserDetails.class,
+            withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        doReturn("").when(userDetails0).getUserName();
+
+        //Call method: isAlreadyExist
+        boolean boolean0 = userService0.isAlreadyExist(userDetails0);
+
+        //Test Result Assert
+        assertTrue(boolean0);
+    }
+
+    @Test(timeout = 4000)
+    public void test_isAlreadyExist_2() throws Throwable {
+        //caseID:151480eeb02e31d236ae33e5935e02f5
+        //CoveredLines: [15, 49, 51, 55, 57, 58, 60]
+        //Input_0_UserDetails: {}
+        //Assert: assertTrue(method_result);
+
+        UserService userService0 = new UserService();
+        //mock userDetails0
+        UserDetails userDetails0 = mock(UserDetails.class,
+            withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+
+        //Call method: isAlreadyExist
+        boolean boolean0 = userService0.isAlreadyExist(userDetails0);
+
+        //Test Result Assert
+        assertTrue(boolean0);
+    }
+
+    @Test(timeout = 4000)
+    public void test_queryUserDetails_3() throws Throwable {
+        //caseID:40297c081c750b58e81ef4eb45ad11e7
+        //CoveredLines: [15, 29]
+        //Input_0_int: 10
+
+        UserService userService0 = new UserService();
+
+        Optional<UserDetails> optional0 = Optional.empty();
+        //mock userRepository0
+        UserRepository userRepository0 = mock(UserRepository.class,
+            withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        doReturn(optional0).when(userRepository0).findById(anyInt());
+
+        PrivateAccess.setVariable((Class<?>) UserService.class, userService0, "userRepository",
+            (Object) userRepository0);
+
+        //Call method: queryUserDetails
+        // Undeclared exception!
+        try {
+            userService0.queryUserDetails(10);
+        } catch (Throwable e) {
+            verifyException("java.util.Optional", e);
+            assertEquals("java.util.NoSuchElementException", e.getClass().getName());
+            assertEquals("No value present", e.getMessage());
+        }
+    }
+
+    @Test(timeout = 4000)
+    public void test_register_4() throws Throwable {
+        //caseID:dfbd4b7036ce8260c14b0a3ea18dd6a6
+        //CoveredLines: [15, 39]
+        //Input_0_UserDetails: {}
+        //Assert: assertNull(method_result);
+
+        UserService userService0 = new UserService();
+        //mock userRepository0
+        UserRepository userRepository0 = mock(UserRepository.class,
+            withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+
+        PrivateAccess.setVariable((Class<?>) UserService.class, userService0, "userRepository",
+            (Object) userRepository0);
+        //mock userDetails0
+        UserDetails userDetails0 = mock(UserDetails.class,
+            withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+
+        //Call method: register
+        UserDetails userDetails1 = userService0.register(userDetails0);
+
+        //Test Result Assert
+        assertNull(userDetails1);
+    }
+
+    @Test(timeout = 4000)
+    public void test_validate_5() throws Throwable {
+        //caseID:323679c589bc0eca98a68c9618bca137
+        //CoveredLines: [15, 71]
+        //Input_0_String: Error to check registry
+        //Input_1_String: 192
+        //Assert: assertNull(method_result);
+
+        UserService userService0 = new UserService();
+        //mock userRepository0
+        UserRepository userRepository0 = mock(UserRepository.class,
+            withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+
+        PrivateAccess.setVariable((Class<?>) UserService.class, userService0, "userRepository",
+            (Object) userRepository0);
+
+        //Call method: validate
+        UserDetails userDetails0 = userService0.validate("Error to check registry", "192");
+
+        //Test Result Assert
+        assertNull(userDetails0);
+    }
 }

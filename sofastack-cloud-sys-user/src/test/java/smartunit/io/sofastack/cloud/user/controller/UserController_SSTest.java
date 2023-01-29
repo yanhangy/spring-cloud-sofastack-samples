@@ -21,114 +21,129 @@ import org.smartunit.runtime.SmartRunnerParameters;
 import org.smartunit.runtime.TransactionTemplateAnswer;
 import org.smartunit.runtime.ViolatedAssumptionAnswer;
 
-@RunWith(SmartRunner.class) @SmartRunnerParameters(mockJVMNonDeterminism = true, useVFS = true, useVNET = true, resetStaticState = true) 
+@RunWith(SmartRunner.class)
+@SmartRunnerParameters(mockJVMNonDeterminism = true, useVFS = true, useVNET = true, resetStaticState = true)
 public class UserController_SSTest extends UserController_SSTest_scaffolding {
-// allCoveredLines:[20, 29, 31, 32, 33, 38, 39, 44, 46, 47, 48, 49, 50, 51, 52, 59, 60, 65, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77]
+    // allCoveredLines:[20, 29, 31, 32, 33, 38, 39, 44, 46, 47, 48, 49, 50, 51, 52, 59, 60, 65, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77]
 
-  @Test(timeout = 4000)
-  public void test_register_0()  throws Throwable  {
-      //caseID:92793226aee389ffbabb10b337b57a05
-      //CoveredLines: [20, 44, 46, 51, 52, 59, 60]
-      //Input_0_UserDetails: {}
-      //Assert: assertFalse(method_result.isSuccess());
-      //Assert: assertEquals("\u6CE8\u518C\u5931\u8D25\uFF0C\u5F53\u524D userName \u5DF2\u7ECF\u5B58\u5728\u3002", method_result.getErrorMsg());
-      
-      UserController userController0 = new UserController();
-      //mock userService0
-      UserService userService0 = mock(UserService.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      doReturn(true).when(userService0).isAlreadyExist(any(io.sofastack.cloud.common.model.UserDetails.class));
-      
-      PrivateAccess.setVariable((Class<?>) UserController.class, userController0, "userService", (Object) userService0);
-      //mock userDetails0
-      UserDetails userDetails0 = mock(UserDetails.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      
-      //Call method: register
-      Result<UserDetails> result0 = userController0.register(userDetails0);
-      
-      //Test Result Assert
-      assertFalse(result0.isSuccess());
-      
-      //Test Result Assert
-      assertEquals("\u6CE8\u518C\u5931\u8D25\uFF0C\u5F53\u524D userName \u5DF2\u7ECF\u5B58\u5728\u3002", result0.getErrorMsg());
-  }
+    @Test(timeout = 4000)
+    public void test_register_0() throws Throwable {
+        //caseID:92793226aee389ffbabb10b337b57a05
+        //CoveredLines: [20, 44, 46, 51, 52, 59, 60]
+        //Input_0_UserDetails: {}
+        //Assert: assertFalse(method_result.isSuccess());
+        //Assert: assertEquals("\u6CE8\u518C\u5931\u8D25\uFF0C\u5F53\u524D userName \u5DF2\u7ECF\u5B58\u5728\u3002", method_result.getErrorMsg());
 
-  @Test(timeout = 4000)
-  public void test_register_1()  throws Throwable  {
-      //caseID:77b1dad3c94d8a43329f25be8168d66a
-      //CoveredLines: [20, 44, 46, 47, 48, 49, 50, 59, 60]
-      //Input_0_UserDetails: {}
-      //Assert: assertTrue(method_result.isSuccess());
-      
-      UserController userController0 = new UserController();
-      //mock userService0
-      UserService userService0 = mock(UserService.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      
-      PrivateAccess.setVariable((Class<?>) UserController.class, userController0, "userService", (Object) userService0);
-      //mock userDetails0
-      UserDetails userDetails0 = mock(UserDetails.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      
-      //Call method: register
-      Result<UserDetails> result0 = userController0.register(userDetails0);
-      
-      //Test Result Assert
-      assertTrue(result0.isSuccess());
-  }
+        UserController userController0 = new UserController();
+        //mock userService0
+        UserService userService0 = mock(UserService.class,
+            withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+        doReturn(true).when(userService0).isAlreadyExist(
+            any(io.sofastack.cloud.common.model.UserDetails.class));
 
-  @Test(timeout = 4000)
-  public void test_userDetails_2()  throws Throwable  {
-      //caseID:e21a2046858eea231311816206076317
-      //CoveredLines: [20, 29, 31, 32, 33, 38, 39]
-      //Input_0_int: 18
-      //Assert: assertTrue(method_result.isSuccess());
-      
-      UserController userController0 = new UserController();
-      //mock userService0
-      UserService userService0 = mock(UserService.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      
-      PrivateAccess.setVariable((Class<?>) UserController.class, userController0, "userService", (Object) userService0);
-      
-      //Call method: userDetails
-      Result<UserDetails> result0 = userController0.userDetails(18);
-      
-      //Test Result Assert
-      assertTrue(result0.isSuccess());
-  }
+        PrivateAccess.setVariable((Class<?>) UserController.class, userController0, "userService",
+            (Object) userService0);
+        //mock userDetails0
+        UserDetails userDetails0 = mock(UserDetails.class,
+            withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
 
-  @Test(timeout = 4000)
-  public void test_validate_3()  throws Throwable  {
-      //caseID:c46146c62a3c7448396c0569f76c323d
-      //CoveredLines: [20, 65, 67, 72, 73, 74, 75, 77]
-      //Input_0_UserDetails: null
-      //Assert: assertFalse(method_result.isSuccess());
-      
-      UserController userController0 = new UserController();
-      
-      //Call method: validate
-      Result<UserDetails> result0 = userController0.validate((UserDetails) null);
-      
-      //Test Result Assert
-      assertFalse(result0.isSuccess());
-  }
+        //Call method: register
+        Result<UserDetails> result0 = userController0.register(userDetails0);
 
-  @Test(timeout = 4000)
-  public void test_validate_4()  throws Throwable  {
-      //caseID:56c697a2b8926ec1a8b1b1717db6a36d
-      //CoveredLines: [20, 65, 67, 68, 69, 70, 71, 76, 77]
-      //Input_0_UserDetails: {}
-      //Assert: assertTrue(method_result.isSuccess());
-      
-      UserController userController0 = new UserController();
-      //mock userService0
-      UserService userService0 = mock(UserService.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      
-      PrivateAccess.setVariable((Class<?>) UserController.class, userController0, "userService", (Object) userService0);
-      //mock userDetails0
-      UserDetails userDetails0 = mock(UserDetails.class, withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
-      
-      //Call method: validate
-      Result<UserDetails> result0 = userController0.validate(userDetails0);
-      
-      //Test Result Assert
-      assertTrue(result0.isSuccess());
-  }
+        //Test Result Assert
+        assertFalse(result0.isSuccess());
+
+        //Test Result Assert
+        assertEquals(
+            "\u6CE8\u518C\u5931\u8D25\uFF0C\u5F53\u524D userName \u5DF2\u7ECF\u5B58\u5728\u3002",
+            result0.getErrorMsg());
+    }
+
+    @Test(timeout = 4000)
+    public void test_register_1() throws Throwable {
+        //caseID:77b1dad3c94d8a43329f25be8168d66a
+        //CoveredLines: [20, 44, 46, 47, 48, 49, 50, 59, 60]
+        //Input_0_UserDetails: {}
+        //Assert: assertTrue(method_result.isSuccess());
+
+        UserController userController0 = new UserController();
+        //mock userService0
+        UserService userService0 = mock(UserService.class,
+            withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+
+        PrivateAccess.setVariable((Class<?>) UserController.class, userController0, "userService",
+            (Object) userService0);
+        //mock userDetails0
+        UserDetails userDetails0 = mock(UserDetails.class,
+            withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+
+        //Call method: register
+        Result<UserDetails> result0 = userController0.register(userDetails0);
+
+        //Test Result Assert
+        assertTrue(result0.isSuccess());
+    }
+
+    @Test(timeout = 4000)
+    public void test_userDetails_2() throws Throwable {
+        //caseID:e21a2046858eea231311816206076317
+        //CoveredLines: [20, 29, 31, 32, 33, 38, 39]
+        //Input_0_int: 18
+        //Assert: assertTrue(method_result.isSuccess());
+
+        UserController userController0 = new UserController();
+        //mock userService0
+        UserService userService0 = mock(UserService.class,
+            withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+
+        PrivateAccess.setVariable((Class<?>) UserController.class, userController0, "userService",
+            (Object) userService0);
+
+        //Call method: userDetails
+        Result<UserDetails> result0 = userController0.userDetails(18);
+
+        //Test Result Assert
+        assertTrue(result0.isSuccess());
+    }
+
+    @Test(timeout = 4000)
+    public void test_validate_3() throws Throwable {
+        //caseID:c46146c62a3c7448396c0569f76c323d
+        //CoveredLines: [20, 65, 67, 72, 73, 74, 75, 77]
+        //Input_0_UserDetails: null
+        //Assert: assertFalse(method_result.isSuccess());
+
+        UserController userController0 = new UserController();
+
+        //Call method: validate
+        Result<UserDetails> result0 = userController0.validate((UserDetails) null);
+
+        //Test Result Assert
+        assertFalse(result0.isSuccess());
+    }
+
+    @Test(timeout = 4000)
+    public void test_validate_4() throws Throwable {
+        //caseID:56c697a2b8926ec1a8b1b1717db6a36d
+        //CoveredLines: [20, 65, 67, 68, 69, 70, 71, 76, 77]
+        //Input_0_UserDetails: {}
+        //Assert: assertTrue(method_result.isSuccess());
+
+        UserController userController0 = new UserController();
+        //mock userService0
+        UserService userService0 = mock(UserService.class,
+            withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+
+        PrivateAccess.setVariable((Class<?>) UserController.class, userController0, "userService",
+            (Object) userService0);
+        //mock userDetails0
+        UserDetails userDetails0 = mock(UserDetails.class,
+            withSettings().defaultAnswer(new ViolatedAssumptionAnswer()).stubOnly());
+
+        //Call method: validate
+        Result<UserDetails> result0 = userController0.validate(userDetails0);
+
+        //Test Result Assert
+        assertTrue(result0.isSuccess());
+    }
 }
