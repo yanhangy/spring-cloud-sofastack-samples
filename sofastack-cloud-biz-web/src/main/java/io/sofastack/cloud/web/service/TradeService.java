@@ -27,6 +27,10 @@ public class TradeService {
      * @return
      */
     public Result<TradingOrder> createTradingOrder(TradingContext tradingContext) {
+        Result<TradingOrder> tradingOrderResult = queryTradingOrder(tradingContext.getSerialNo());
+        if (tradingOrderResult.isSuccess() && tradingOrderResult.getData().getId() != null){
+            return new Result<>();
+        }
         return tradingService.createTradingOrder(tradingContext);
     }
 
