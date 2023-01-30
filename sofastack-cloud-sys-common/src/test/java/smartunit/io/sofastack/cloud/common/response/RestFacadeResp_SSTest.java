@@ -12,67 +12,68 @@ import org.junit.runner.RunWith;
 import org.smartunit.runtime.SmartRunner;
 import org.smartunit.runtime.SmartRunnerParameters;
 
-@RunWith(SmartRunner.class) @SmartRunnerParameters(mockJVMNonDeterminism = true, useVFS = true, useVNET = true, resetStaticState = true) 
+@RunWith(SmartRunner.class)
+@SmartRunnerParameters(mockJVMNonDeterminism = true, useVFS = true, useVNET = true, resetStaticState = true)
 public class RestFacadeResp_SSTest extends RestFacadeResp_SSTest_scaffolding {
-// allCoveredLines:[7, 11, 14, 18, 19, 22, 26, 27]
+    // allCoveredLines:[7, 11, 14, 18, 19, 22, 26, 27]
 
-  @Test(timeout = 4000)
-  public void test_getData_0()  throws Throwable  {
-      //caseID:ae8bd1fd8034c85bcc997596a9272185
-      //CoveredLines: [7, 11, 14]
-      //Assert: assertFalse(restFacadeResp0.isSuccess());
-      
-      RestFacadeResp<Object> restFacadeResp0 = new RestFacadeResp<Object>();
-      
-      //Call method: getData
-      restFacadeResp0.getData();
-      
-      //Test Result Assert
-      assertFalse(restFacadeResp0.isSuccess());
-  }
+    @Test(timeout = 4000)
+    public void test_getData_0() throws Throwable {
+        //caseID:ae8bd1fd8034c85bcc997596a9272185
+        //CoveredLines: [7, 11, 14]
+        //Assert: assertFalse(restFacadeResp0.isSuccess());
 
-  @Test(timeout = 4000)
-  public void test_isSuccess_1()  throws Throwable  {
-      //caseID:8a3219639edc84dd4c9b8b0d7b1ed5a1
-      //CoveredLines: [7, 11, 22]
-      //Assert: assertFalse(method_result);
-      
-      RestFacadeResp<String> restFacadeResp0 = new RestFacadeResp<String>();
-      
-      //Call method: isSuccess
-      boolean boolean0 = restFacadeResp0.isSuccess();
-      
-      //Test Result Assert
-      assertFalse(boolean0);
-  }
+        RestFacadeResp<Object> restFacadeResp0 = new RestFacadeResp<Object>();
 
-  @Test(timeout = 4000)
-  public void test_setData_2()  throws Throwable  {
-      //caseID:4ff72f72d76d3e48e1b0056e73c57c88
-      //CoveredLines: [7, 11, 18, 19]
-      //Input_0_Object: 1.0
-      
-      RestFacadeResp<Object> restFacadeResp0 = new RestFacadeResp<Object>();
-      
-      //Call method: setData
-      restFacadeResp0.setData("1.0");
-      
-      //Test Result Assert
-      assertFalse(restFacadeResp0.isSuccess());
-  }
+        //Call method: getData
+        restFacadeResp0.getData();
 
-  @Test(timeout = 4000)
-  public void test_setSuccess_3()  throws Throwable  {
-      //caseID:80e549924da381ea456d8bc5bc7385f8
-      //CoveredLines: [7, 11, 26, 27]
-      //Input_0_boolean: false
-      
-      RestFacadeResp<String> restFacadeResp0 = new RestFacadeResp<String>();
-      
-      //Call method: setSuccess
-      restFacadeResp0.setSuccess(false);
-      
-      //Test Result Assert
-      assertFalse(restFacadeResp0.isSuccess());
-  }
+        //Test Result Assert
+        assertFalse(restFacadeResp0.isSuccess());
+    }
+
+    @Test(timeout = 4000)
+    public void test_isSuccess_1() throws Throwable {
+        //caseID:8a3219639edc84dd4c9b8b0d7b1ed5a1
+        //CoveredLines: [7, 11, 22]
+        //Assert: assertFalse(method_result);
+
+        RestFacadeResp<String> restFacadeResp0 = new RestFacadeResp<String>();
+
+        //Call method: isSuccess
+        boolean boolean0 = restFacadeResp0.isSuccess();
+
+        //Test Result Assert
+        assertFalse(boolean0);
+    }
+
+    @Test(timeout = 4000)
+    public void test_setData_2() throws Throwable {
+        //caseID:4ff72f72d76d3e48e1b0056e73c57c88
+        //CoveredLines: [7, 11, 18, 19]
+        //Input_0_Object: 1.0
+
+        RestFacadeResp<Object> restFacadeResp0 = new RestFacadeResp<Object>();
+
+        //Call method: setData
+        restFacadeResp0.setData("1.0");
+
+        //Test Result Assert
+        assertFalse(restFacadeResp0.isSuccess());
+    }
+
+    @Test(timeout = 4000)
+    public void test_setSuccess_3() throws Throwable {
+        //caseID:80e549924da381ea456d8bc5bc7385f8
+        //CoveredLines: [7, 11, 26, 27]
+        //Input_0_boolean: false
+
+        RestFacadeResp<String> restFacadeResp0 = new RestFacadeResp<String>();
+
+        //Call method: setSuccess
+        restFacadeResp0.setSuccess(false);
+
+        //Test Result Assert
+        assertFalse(restFacadeResp0.isSuccess());
+    }
 }
