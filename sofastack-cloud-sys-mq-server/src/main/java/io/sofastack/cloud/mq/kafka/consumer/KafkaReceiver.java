@@ -30,7 +30,7 @@ public class KafkaReceiver {
     @Autowired
     private UserService         userService;
 
-    @KafkaListener(topics = {KafkaConstants.TRADE_TOPIC}, groupId = "test-consumer-group")
+    @KafkaListener(topics = { KafkaConstants.TRADE_TOPIC }, groupId = "test-consumer-group")
     public void listen(ConsumerRecord<?, ?> record) {
         LOGGER.info("Invoker kafka listen to consumer.topic {},{}", record.topic(), record.value());
         try {
