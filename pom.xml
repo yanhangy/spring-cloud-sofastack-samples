@@ -32,7 +32,6 @@
 
     <modules>
         <module>sofastack-cloud-biz-web</module>
-        <module>sofastack-cloud-api-gateway</module>
         <module>sofastack-cloud-sys-auth</module>
         <module>sofastack-cloud-sys-user</module>
         <module>sofastack-cloud-sys-accounting</module>
